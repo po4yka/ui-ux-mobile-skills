@@ -1,0 +1,18 @@
+Gesture,Platform,SwiftUI,Compose,Flutter,Haptic Feedback,Accessibility Alternative
+Tap,Cross-platform,TapGesture onTapGesture,clickable Modifier.clickable,GestureDetector onTap,Light impact on action,.isButton role tap action
+Double Tap,Cross-platform,TapGesture count:2,combinedClickable onDoubleClick,GestureDetector onDoubleTap,Light impact,Single tap alternative a11y action
+Long Press,Cross-platform,LongPressGesture onLongPressGesture,combinedClickable onLongClick,GestureDetector onLongPress,Medium impact on trigger,Context menu button alternative
+Swipe Horizontal,Cross-platform,DragGesture with direction,swipeable Modifier,Dismissible GestureDetector,Light impact on threshold,Swipe actions button alternatives
+Swipe Vertical,Cross-platform,DragGesture vertical,Modifier.draggable vertical,GestureDetector vertical drag,Subtle feedback,Scroll or button alternatives
+Drag,Cross-platform,DragGesture,Modifier.draggable,Draggable LongPressDraggable,Continuous subtle feedback,Move buttons reorder menu
+Pinch Zoom,Cross-platform,MagnificationGesture,transformable detectTransformGestures,InteractiveViewer ScaleGestureDetector,None or subtle,Zoom buttons double tap zoom
+Rotation,Cross-platform,RotationGesture,transformable rotation,RotationGestureDetector,Subtle on snap angles,Rotation buttons or disabled
+Pan,Cross-platform,DragGesture,Modifier.offset draggable,GestureDetector onPan,None,Arrow buttons scroll alternatives
+Edge Swipe Back,iOS/Android,NavigationStack automatic,BackHandler system,WillPopScope Navigator.pop,Light impact,Back button always present
+Pull to Refresh,Cross-platform,.refreshable modifier,pullRefresh Modifier,RefreshIndicator,Medium impact on trigger,Refresh button in toolbar
+Scroll,Cross-platform,ScrollView List,LazyColumn LazyRow,ListView SingleChildScrollView,Edge bounce feedback,Focus navigation page buttons
+Force Touch 3D Touch,iOS legacy,Not available iOS 13+,N/A,N/A,Peek and pop removed,Long press context menu
+Haptic Tap,Cross-platform,UIImpactFeedbackGenerator,HapticFeedback.performHapticFeedback,HapticFeedback.vibrate,Customizable intensity,Audio feedback alternative
+Swipe Actions,Cross-platform,.swipeActions modifier,SwipeToDismiss,Dismissible Slidable,Light impact on reveal,Action buttons visible
+Multi-touch,Cross-platform,SimultaneousGesture,Multiple pointer input,MultiDragGestureRecognizer,Per-finger feedback,Single touch fallback
+Hover,iPadOS/Desktop,.onHover modifier,Modifier.hoverable,MouseRegion,None - visual only,Focus states for keyboard

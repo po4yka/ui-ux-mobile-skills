@@ -1,0 +1,28 @@
+Component,Platform,SwiftUI API,Compose API,Flutter API,RN Component,Accessibility,Best Practices
+Button Primary,Cross-platform,.buttonStyle(.borderedProminent),Button with filled style,ElevatedButton,TouchableOpacity + styled,accessibilityLabel role button,Min 48dp touch target clear label
+Button Secondary,Cross-platform,.buttonStyle(.bordered),OutlinedButton,OutlinedButton,TouchableOpacity + border,accessibilityLabel role button,Distinct from primary lower emphasis
+Button Tertiary,Cross-platform,.buttonStyle(.borderless),TextButton,TextButton,TouchableOpacity text only,accessibilityLabel role button,Lowest emphasis auxiliary actions
+FAB,Cross-platform,Custom floating button,FloatingActionButton,FloatingActionButton,Custom positioned button,accessibilityLabel primary action,Bottom right 16dp margin one per screen
+Icon Button,Cross-platform,Button with Image,IconButton,IconButton,TouchableOpacity + Icon,accessibilityLabel describes action,48dp minimum size clear meaning
+Toggle Switch,Cross-platform,Toggle,Switch,Switch,Switch from RN,accessibilityRole switch state,Immediate visual feedback
+Checkbox,Cross-platform,Toggle with style,Checkbox,Checkbox,Custom or library,accessibilityRole checkbox state,Clear checked/unchecked states
+Radio Button,Cross-platform,Picker with style,RadioButton,Radio,Custom or library,accessibilityRole radio selection,Group with single selection
+Slider,Cross-platform,Slider,Slider,Slider,Slider from RN,accessibilityValue min max current,Visible value label thumb 48dp
+Text Field,Cross-platform,TextField,TextField OutlinedTextField,TextField TextFormField,TextInput,accessibilityLabel hint,Clear label error state 48dp height
+Text Area,Cross-platform,TextEditor,TextField multiline,TextField maxLines,TextInput multiline,accessibilityLabel hint,Auto-expand visible line count
+Dropdown,Cross-platform,Picker Menu,DropdownMenu ExposedDropdownMenuBox,DropdownButton PopupMenuButton,Picker or custom,accessibilityRole menu expanded,Clear selected state scrollable
+Navigation Bar Bottom,Cross-platform,TabView,.bottomBar,NavigationBar BottomNavigationBar,Bottom Tabs navigator,accessibilityRole tablist,3-5 items icons + labels
+Navigation Rail,Tablet,Custom sidebar,NavigationRail,NavigationRail,Custom sidebar,accessibilityRole navigation,7 items max FAB slot
+Top App Bar,Cross-platform,NavigationView toolbar,TopAppBar SmallTopAppBar,AppBar,Header custom,accessibilityRole banner,Title actions navigation
+Bottom Sheet,Cross-platform,.sheet presentationDetents,ModalBottomSheet,showModalBottomSheet,Modal or library,accessibilityRole dialog,Swipe to dismiss partial heights
+Dialog Alert,Cross-platform,.alert,AlertDialog,AlertDialog showDialog,Alert from RN,accessibilityRole alert,Clear title actions max 2 buttons
+Card,Cross-platform,Custom with background,Card ElevatedCard,Card,Custom View styled,accessibilityRole button if tappable,Consistent corner radius elevation
+List Item,Cross-platform,List row,ListItem,ListTile,FlatList item,accessibilityRole listitem,48dp min height clear tap target
+Divider,Cross-platform,Divider,Divider HorizontalDivider,Divider,View styled,decorative or separator role,Subtle 1dp consistent color
+Progress Indicator,Cross-platform,ProgressView,CircularProgressIndicator LinearProgressIndicator,CircularProgressIndicator LinearProgressIndicator,ActivityIndicator,accessibilityRole progressbar value,Clear loading state determinate when possible
+Snackbar Toast,Cross-platform,Custom overlay,Snackbar,SnackBar ScaffoldMessenger,Custom or library,accessibilityLiveRegion polite,Brief message single action auto-dismiss
+Chip,Cross-platform,Custom button,AssistChip FilterChip InputChip,Chip FilterChip,Custom TouchableOpacity,accessibilityRole button state,Clear selection state removable
+Badge,Cross-platform,Custom overlay,.badge modifier,Badge,Custom positioned View,accessibilityLabel count,Max 3 digits position top-right
+Segmented Control,Cross-platform,Picker segmented,SegmentedButton,SegmentedButton custom,SegmentedControl custom,accessibilityRole tablist,2-5 segments equal width
+Date Picker,Cross-platform,DatePicker,DatePicker DatePickerDialog,showDatePicker,DateTimePicker library,accessibilityRole date picker,Native picker validation
+Time Picker,Cross-platform,DatePicker time style,TimePicker TimePickerDialog,showTimePicker,DateTimePicker library,accessibilityRole time picker,12/24 hour format

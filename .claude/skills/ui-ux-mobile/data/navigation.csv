@@ -1,0 +1,16 @@
+Pattern,Platform,Implementation,Thumb Zone,Gesture Support,Deep Linking,Best For
+Bottom Navigation,Cross-platform,TabView NavigationBar BottomNavigationBar,Primary zone - easy thumb reach,Swipe between tabs optional,Tab-based deep links,3-5 main destinations consumer apps
+Navigation Drawer,Cross-platform,NavigationView sidebar DrawerLayout,Edge swipe required - less accessible,Edge swipe to open,Section deep links,Many destinations complex apps settings
+Tab Bar Floating,iOS 26,TabView with Liquid Glass dynamic sizing,Primary zone - shrinks on scroll,Swipe tabs scroll collapse,Tab deep links,iOS 26 apps modern navigation
+Navigation Rail,Tablet,Custom NavigationRail,Side placement - landscape friendly,None standard,Rail item deep links,Tablet landscape orientation
+Top Tabs,Cross-platform,TabView top Tabs HorizontalPager,Secondary zone - requires reach,Swipe between tabs,Tab deep links,Related content categories filters
+Hierarchical Stack,Cross-platform,NavigationStack NavHost Navigator.push,Back button - top left zone,Swipe back iOS edge gesture,Path-based deep links,Drill-down content detail views
+Modal Presentation,Cross-platform,.sheet present showModalBottomSheet,Dismiss gesture varies,Swipe down to dismiss,Modal deep links limited,Focused tasks forms
+Full Screen Modal,Cross-platform,.fullScreenCover Dialog.fullscreen MaterialPageRoute,Full screen - all zones,Platform back gesture,Task completion links,Immersive content onboarding
+Bottom Sheet Modal,Cross-platform,.sheet detents ModalBottomSheet showModalBottomSheet,Bottom zone - natural thumb,Swipe down to dismiss drag resize,Action deep links,Quick actions selections
+Search Navigation,Cross-platform,.searchable SearchBar SearchDelegate,Top zone - keyboard focus,Focus triggers keyboard,Search query deep links,Content-heavy apps discovery
+Contextual Menu,Cross-platform,.contextMenu DropdownMenu PopupMenuButton,Long press location,Long press to show,No deep link support,Quick actions on items
+Action Sheet,iOS,ActionSheet BottomSheetDialog showModalBottomSheet,Bottom zone - thumb friendly,Tap outside to dismiss,No deep link support,Destructive confirmations choices
+Split View,iPad/Tablet,NavigationSplitView permanent drawer,Left panel - pointer friendly,None standard,Master-detail deep links,iPad master-detail layouts
+Compact Navigation,Watch/Small,PageTabViewStyle vertical paging,Full screen - edge swipes,Swipe between pages,Page deep links,WatchOS small screens
+Gesture Navigation,Modern Android,System gesture nav edge swipes,Edge zones reserved for system,Back home recent system,N/A system level,Android 10+ gesture navigation

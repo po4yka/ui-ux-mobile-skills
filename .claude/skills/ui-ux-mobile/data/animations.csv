@@ -1,0 +1,23 @@
+Animation Type,Platform,Duration,Easing,SwiftUI API,Compose API,Use Case,Reduce Motion Alternative
+Spring Default,Cross-platform,~300ms,Spring response 0.5 dampingFraction 0.8,.spring() default,spring() default,General UI transitions button feedback,Instant change no animation
+Spring Bouncy,Cross-platform,~400ms,Spring bounce 0.3 higher response,.spring(bounce: 0.3),spring(stiffness: Spring.StiffnessLow),Playful interactions successful actions,Reduced bounce or instant
+Spring Snappy,Cross-platform,~200ms,Spring high stiffness low damping,.spring(duration: 0.2),spring(stiffness: Spring.StiffnessHigh),Quick responsive interactions,Instant change
+Ease In Out,Cross-platform,300ms,Cubic bezier 0.42 0 0.58 1,.easeInOut(duration: 0.3),tween(easing: FastOutSlowInEasing),Standard transitions fades,Instant or 150ms
+Ease Out,Cross-platform,250ms,Cubic bezier 0 0 0.58 1,.easeOut(duration: 0.25),tween(easing: LinearOutSlowInEasing),Elements entering view,Instant appearance
+Ease In,Cross-platform,200ms,Cubic bezier 0.42 0 1 1,.easeIn(duration: 0.2),tween(easing: FastOutLinearInEasing),Elements exiting view,Instant removal
+Linear,Cross-platform,Variable,Linear constant speed,.linear(duration: T),tween(easing: LinearEasing),Progress indicators continuous motion,Static progress or instant
+Container Transform,Material 3,300-400ms,Emphasized easing curve,Custom matched geometry,containerTransform(),List to detail card expansion,Instant view switch crossfade
+Shared Axis,Material 3,300ms,Emphasized decelerate/accelerate,Custom with offset,SharedAxisTransition(),Navigation forward backward,Instant switch
+Fade Through,Material 3,300ms,Fade out then fade in,Custom opacity sequence,fadeThrough(),Unrelated element transitions,Instant switch
+Materialization,iOS 26 Liquid Glass,~400ms,Spring with light modulation,.transition(.materialize),N/A,Glass elements appearing,Instant appearance
+Dematerialization,iOS 26 Liquid Glass,~300ms,Spring fade and blur,.transition(.dematerialize),N/A,Glass elements disappearing,Instant removal
+Morphing Glass,iOS 26 Liquid Glass,~400ms,Spring shape interpolation,glassEffectID matched geometry,N/A,Glass shape transitions,Instant shape change
+Tab Bar Collapse,iOS 26,~300ms,Spring on scroll,TabView automatic in iOS 26,N/A,Tab bar scroll behavior,No collapse static tabs
+Ripple,Material 3,225ms,Standard decelerate,Custom ripple effect,Indication ripple(),Touch feedback,Instant color change
+Scale Press,Cross-platform,100ms,Ease out,scaleEffect with gesture,Modifier.clickable indication,Button press feedback,Instant opacity change
+Skeleton Loading,Cross-platform,1-2s loop,Ease in out shimmer,Custom shimmer animation,shimmer() modifier custom,Loading placeholders,Static skeleton
+Stagger Reveal,Cross-platform,50-100ms delay,Spring per item,.animation with delay per index,animateItemPlacement(),List item appearance,Instant all items
+Pull Refresh,Cross-platform,~500ms,Spring rotation,.refreshable built-in,pullRefresh() built-in,Pull to refresh indicator,Instant refresh no spin
+Page Transition,Cross-platform,350ms,Platform default,NavigationStack default,NavHost composable,Screen navigation,Instant switch crossfade
+Bottom Sheet,Cross-platform,~400ms,Spring or emphasized,.sheet presentationDetents,ModalBottomSheet,Sheet presentation,Instant appearance
+Haptic Feedback,Cross-platform,Instant,N/A,UIImpactFeedbackGenerator,HapticFeedback.performHapticFeedback,Touch confirmation,Audio feedback or visual only
