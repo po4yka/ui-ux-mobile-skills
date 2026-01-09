@@ -1,0 +1,44 @@
+{
+  "name": "uipro-mobile",
+  "version": "1.0.0",
+  "description": "CLI tool for installing UI/UX Mobile skill for Claude Code and OpenAI Codex",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "uipro-mobile": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "ui",
+    "ux",
+    "mobile",
+    "claude",
+    "codex",
+    "design",
+    "material3",
+    "liquid-glass",
+    "swiftui",
+    "jetpack-compose"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "ora": "^8.0.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/prompts": "^2.4.9",
+    "tsx": "^4.15.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

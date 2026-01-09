@@ -2,6 +2,11 @@
 
 AI-powered design intelligence toolkit for mobile UI/UX development. Provides searchable databases of styles, colors, typography, components, navigation, gestures, accessibility, and animations.
 
+## Supported AI Assistants
+
+- **Claude Code** - Full skill support
+- **OpenAI Codex** - Full skill support
+
 ## Supported Platforms
 
 - **iOS**: SwiftUI with iOS 26 Liquid Glass
@@ -13,7 +18,36 @@ AI-powered design intelligence toolkit for mobile UI/UX development. Provides se
 - **8 Search Domains**: style, color, typography, component, navigation, gesture, accessibility, animation
 - **7 Stack Guides**: SwiftUI, Jetpack Compose, Flutter, React Native, KMP, Material 3, Liquid Glass
 - **Zero Dependencies**: Pure Python with BM25 search algorithm
-- **Multi-AI Support**: Works with Claude Code, Cursor, Windsurf, GitHub Copilot, Kiro
+- **CLI Installer**: Easy installation for Claude and Codex
+
+## Installation
+
+### Using CLI (Recommended)
+
+```bash
+# Install globally
+npm install -g uipro-mobile
+
+# Or use npx
+npx uipro-mobile init
+
+# Install for specific AI
+uipro-mobile init --ai claude
+uipro-mobile init --ai codex
+uipro-mobile init --ai all
+```
+
+### Manual Installation
+
+Copy the appropriate skill folder to your project:
+
+```bash
+# For Claude Code
+cp -r .claude/skills/ui-ux-mobile /path/to/your/project/.claude/skills/
+
+# For OpenAI Codex
+cp -r .codex/skills/ui-ux-mobile /path/to/your/project/.codex/skills/
+```
 
 ## Quick Start
 
@@ -87,22 +121,24 @@ Detailed research documentation available in `docs/`:
 
 ```
 ui-ux-mobile-skills/
-├── .claude/skills/ui-ux-mobile/     # Claude Code skill
-│   ├── SKILL.md                      # Skill definition
-│   ├── scripts/                      # Search engine
-│   └── data/                         # CSV databases
-├── .cursor/rules/                    # Cursor rules
-├── .windsurf/workflows/              # Windsurf workflow
-├── .agent/workflows/                 # Generic agent workflow
-├── .github/prompts/                  # GitHub Copilot prompt
-├── .kiro/steering/                   # Kiro steering
-├── .shared/ui-ux-mobile/             # Shared data
-└── docs/                             # Research documentation
+├── .claude/skills/ui-ux-mobile/    # Claude Code skill
+│   ├── SKILL.md                     # Skill definition
+│   ├── scripts/                     # Search engine
+│   └── data/                        # CSV databases
+├── .codex/skills/ui-ux-mobile/     # OpenAI Codex skill
+│   ├── SKILL.md
+│   ├── scripts/
+│   └── data/
+├── cli/                            # CLI installer tool
+│   ├── src/                         # TypeScript source
+│   └── assets/                      # Distribution assets
+└── docs/                           # Research documentation
 ```
 
 ## Requirements
 
-- Python 3.x (no external dependencies)
+- Python 3.x (for running search scripts)
+- Node.js 18+ (for CLI tool, optional)
 
 ## License
 

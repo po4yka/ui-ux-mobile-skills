@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-UI/UX Mobile is an AI-powered design intelligence toolkit providing searchable databases of mobile UI styles, color systems, typography scales, components, navigation patterns, gestures, accessibility guidelines, and animations. It works as a skill/workflow for AI coding assistants (Claude Code, Windsurf, Cursor, etc.).
+UI/UX Mobile is an AI-powered design intelligence toolkit providing searchable databases of mobile UI styles, color systems, typography scales, components, navigation patterns, gestures, accessibility guidelines, and animations. It works as a skill for Claude Code and OpenAI Codex.
 
 Supports:
 - **iOS**: SwiftUI with iOS 26 Liquid Glass
@@ -36,48 +36,45 @@ Available stacks: `swiftui`, `jetpack-compose`, `flutter`, `react-native`, `kmp-
 ## Architecture
 
 ```
-.claude/skills/ui-ux-mobile/    # Claude Code skill
-├── SKILL.md                      # Skill definition with workflow instructions
-├── scripts/
-│   ├── search.py                 # CLI entry point
-│   └── core.py                   # BM25 search engine
-└── data/                         # CSV databases
-    ├── styles.csv                # Mobile visual styles
-    ├── colors.csv                # Color systems
-    ├── typography.csv            # Type scales
-    ├── components.csv            # UI components
-    ├── navigation.csv            # Navigation patterns
-    ├── gestures.csv              # Touch interactions
-    ├── accessibility.csv         # A11y guidelines
-    ├── animations.csv            # Motion design
-    └── stacks/                   # Stack-specific guidelines (7 CSV files)
-
-.windsurf/workflows/              # Windsurf workflow
-.cursor/rules/                    # Cursor rules
-.agent/workflows/ui-ux-mobile/    # Generic agent workflow
-.github/prompts/                  # GitHub Copilot prompt
-.kiro/steering/                   # Kiro steering file
-.shared/ui-ux-mobile/             # Shared data copy
-
-docs/                             # Research documentation
-├── MATERIAL3.md                  # Material Design 3 guide
-├── IOS26-LIQUID-GLASS.md         # iOS 26 Liquid Glass guide
-├── KMP-UNIFIED-UI.md             # KMP unified interface guide
-└── MODERN-MOBILE-UIUX.md         # Modern mobile UX practices
+ui-ux-mobile-skills/
+├── .claude/skills/ui-ux-mobile/    # Claude Code skill
+│   ├── SKILL.md                     # Skill definition
+│   ├── scripts/
+│   │   ├── search.py                # CLI entry point
+│   │   └── core.py                  # BM25 search engine
+│   └── data/                        # CSV databases (8 domains + 7 stacks)
+├── .codex/skills/ui-ux-mobile/     # OpenAI Codex skill (mirror of Claude)
+│   ├── SKILL.md
+│   ├── scripts/
+│   └── data/
+├── cli/                            # Installation CLI tool
+│   ├── src/                         # TypeScript source
+│   └── assets/                      # Distribution assets
+├── docs/                           # Research documentation
+│   ├── MATERIAL3.md
+│   ├── IOS26-LIQUID-GLASS.md
+│   ├── KMP-UNIFIED-UI.md
+│   └── MODERN-MOBILE-UIUX.md
+├── CLAUDE.md                       # This file
+└── README.md                       # Project overview
 ```
 
 The search engine uses BM25 ranking. Domain auto-detection is available when `--domain` is omitted.
 
 ## Sync Rules
 
-When modifying files, keep all agent workflows in sync:
+When modifying files, keep Claude and Codex skills in sync:
 
-- **Data & Scripts** (`data/`, `scripts/`): Copy changes to `.shared/ui-ux-mobile/`
-- **SKILL.md**: Update corresponding files in `.agent/`, `.cursor/`, `.windsurf/`, `.github/prompts/`, `.kiro/steering/`
+- **Data & Scripts**: Changes in `.claude/skills/ui-ux-mobile/` must be copied to:
+  - `.codex/skills/ui-ux-mobile/`
+  - `cli/assets/.claude/skills/ui-ux-mobile/`
+  - `cli/assets/.codex/skills/ui-ux-mobile/`
+- **SKILL.md**: Update both Claude and Codex versions (paths differ)
 
 ## Prerequisites
 
-Python 3.x (no external dependencies required)
+- Python 3.x (no external dependencies required for search)
+- Node.js 18+ (for CLI tool development)
 
 ## Git Workflow
 
