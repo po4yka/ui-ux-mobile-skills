@@ -248,6 +248,30 @@ DON'T: "Error 422: Validation failed"
 - Android: Use Material 3 color roles; show labeled axes and legends; tooltips on long-press
 - Cross-platform: Share data model and tokens, but use native chart patterns and summaries
 
+### Camera Screens
+
+**Key Principles:**
+- Keep the viewfinder edge-to-edge with minimal overlays
+- Place shutter and primary actions in the bottom thumb zone
+- Maintain preview aspect ratio; avoid stretched images
+- Offer clear capture feedback (sound, haptic, or visual)
+
+**Controls and Layout:**
+- Group controls away from the viewfinder center
+- Provide quick access to flash, zoom, and mode switch
+- Use short labels and clear iconography
+- Keep a single primary capture button
+
+**Permissions and Trust:**
+- Use permission priming before the system prompt
+- Explain why camera access is needed and how data is used
+- Offer a fallback for no camera access
+
+**Large Screens and Foldables:**
+- Separate preview and controls when space allows
+- Avoid assumptions about orientation and window size
+- Preserve consistent control placement across modes
+
 ### Pull-to-Refresh and Infinite Scroll
 
 **Pull-to-Refresh:**

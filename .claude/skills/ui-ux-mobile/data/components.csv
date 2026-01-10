@@ -68,3 +68,7 @@ Signature Pad,Cross-platform,Custom Canvas,Custom Canvas,signature_pad,react-nat
 Charts (Bar/Line),Cross-platform,Charts Chart + BarMark or LineMark,Canvas plus chart library (Vico or MPAndroidChart),fl_chart,react-native-svg + victory-native,accessibilityLabel with value summary and units,Label axes and units; allow tap for exact values
 KPI Card,Cross-platform,LabeledContent or Grid with Text,Card with Text,Card + Text,View + Text,accessibilityLabel metric name and value,Keep 1 to 3 primary metrics and show delta
 Sparkline,Cross-platform,Chart with LineMark and minimal axes,Canvas small line chart,fl_chart LineChart,react-native-svg path,accessibilityLabel trend and last value,Use for trends only and pair with numeric value
+Camera Viewfinder,Cross-platform,AVCaptureSession + AVCaptureVideoPreviewLayer,CameraX PreviewView or CameraViewfinder,camera plugin,react-native-vision-camera,accessibilityLabel viewfinder,Maintain aspect ratio and keep controls outside the preview
+Capture Controls,Cross-platform,Button + SF Symbols,IconButton,IconButton,Pressable,accessibilityLabel shutter flash zoom,Place shutter in thumb zone and label control states
+Capture Review,Cross-platform,PhotosPicker or custom review sheet,ModalBottomSheet or full screen,showModalBottomSheet,Modal,accessibilityLabel review,Allow retake and confirm with clear save target
+Grid/Level Overlay,Cross-platform,ZStack overlay,Canvas or Box overlay,CustomPaint,react-native-svg overlay,accessibilityLabel grid,Make grid optional and keep lines subtle

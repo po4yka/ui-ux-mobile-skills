@@ -269,6 +269,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **State** | Use @State, @StateObject, @ObservedObject correctly | Use @ObservedObject to create objects |
 | **Animation** | Use spring animations with reduce motion check | Ignore prefers-reduced-motion |
 | **Charts & stats** | Use Swift Charts with clear axes, summary KPIs, and tap-to-reveal values | Draw custom charts that ignore Dynamic Type or hide values |
+| **Camera screens** | Use Camera Control overlays, SF Symbols, and short labels; keep viewfinder clear | Block viewfinder with controls or use custom symbols/long labels |
 
 ### Android (Jetpack Compose + Material 3)
 
@@ -280,6 +281,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **State** | Use remember, rememberSaveable, StateFlow | Use remember for data that must survive rotation |
 | **Lists** | Use LazyColumn with stable keys | Use Column with items for long lists |
 | **Charts & stats** | Use Material 3 color roles, labeled legends, and tap/long-press value callouts | Encode meaning by color only or omit labels |
+| **Camera screens** | Use CameraX PreviewView/CameraViewfinder with aspect-safe scaling and foldable support | Stretch previews or lock orientation and ignore window changes |
 
 ### Cross-Platform
 
@@ -290,6 +292,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **Navigation** | Use platform navigation patterns | Force same navigation on all platforms |
 | **Gestures** | Provide button alternatives for gestures | Require gestures without alternatives |
 | **Charts & stats** | Share tokens and data model, but use native chart patterns and a text summary | Force identical interactions or skip summaries |
+| **Camera screens** | Prime permissions and provide tap-to-focus, pinch-to-zoom, and capture feedback | Ask for permission cold or rely on gesture-only interactions |
 
 ---
 
