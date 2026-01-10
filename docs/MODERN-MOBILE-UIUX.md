@@ -582,6 +582,31 @@ DO: color-primary-action
 DON'T: blue-500
 ```
 
+**Dynamic theming:**
+- Android: use dynamicLightColorScheme/dynamicDarkColorScheme on API 31+ with fallback
+- iOS: prefer system semantic colors (systemBackground, primary) and Dynamic Type
+- Cross-platform: map semantic tokens to platform roles, then theme per light/dark
+
+**Token usage examples:**
+```swift
+// SwiftUI
+Text("Primary")
+  .foregroundStyle(Color.primary)
+  .padding(16)
+  .background(Color.accentColor)
+```
+
+```kotlin
+// Jetpack Compose
+Text(
+  text = "Primary",
+  color = MaterialTheme.colorScheme.onPrimary,
+  modifier = Modifier
+    .background(MaterialTheme.colorScheme.primary)
+    .padding(16.dp)
+)
+```
+
 **Tools:**
 - Figma Variables/Tokens
 - Style Dictionary (Salesforce)

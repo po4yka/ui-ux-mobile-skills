@@ -9,6 +9,11 @@ color.background,Semantic,Color,Cross-platform,Color(.systemBackground),Material
 color.outline,Semantic,Color,Cross-platform,Color.secondary,MaterialTheme.colorScheme.outline,#79747E,Light/Dark variants,Borders dividers
 color.inverseSurface,Semantic,Color,Cross-platform,Custom inverse,MaterialTheme.colorScheme.inverseSurface,#313033,For contrast,Snackbars tooltips
 color.surfaceVariant,Semantic,Color,Cross-platform,Color(.secondarySystemBackground),MaterialTheme.colorScheme.surfaceVariant,#E7E0EC,Light/Dark variants,Cards containers
+color.neutral.0,Primitive,Color,Cross-platform,Color.white,Color.White,#FFFFFF,N/A,Base light surface
+color.neutral.100,Primitive,Color,Cross-platform,Color(.systemGray6),Color(0xFFF5F5F5),#F5F5F5,N/A,Light neutral background
+color.neutral.900,Primitive,Color,Cross-platform,Color.black,Color(0xFF121212),#121212,N/A,Dark neutral background
+color.brand.500,Primitive,Color,Cross-platform,Color("Brand500"),Color(0xFF6200EE),#6200EE,N/A,Brand base tone
+color.brand.600,Primitive,Color,Cross-platform,Color("Brand600"),Color(0xFF3700B3),#3700B3,N/A,Brand dark tone
 typography.displayLarge,Semantic,Typography,Cross-platform,.font(.largeTitle),MaterialTheme.typography.displayLarge,57sp/64sp,Scales with system,Hero headlines
 typography.headlineMedium,Semantic,Typography,Cross-platform,.font(.title),MaterialTheme.typography.headlineMedium,28sp/36sp,Scales with system,Section titles
 typography.bodyLarge,Semantic,Typography,Cross-platform,.font(.body),MaterialTheme.typography.bodyLarge,16sp/24sp,Scales with system,Primary body text
@@ -37,6 +42,16 @@ opacity.hover,Semantic,Opacity,Cross-platform,0.08,0.08f,8%,N/A,Hover overlay
 opacity.focus,Semantic,Opacity,Cross-platform,0.12,0.12f,12%,N/A,Focus overlay
 opacity.pressed,Semantic,Opacity,Cross-platform,0.12,0.12f,12%,N/A,Pressed overlay
 opacity.dragged,Semantic,Opacity,Cross-platform,0.16,0.16f,16%,N/A,Dragged overlay
+button.primary.bg,Component,Color,Cross-platform,Color.accentColor,MaterialTheme.colorScheme.primary,#6200EE,Light/Dark variants,Primary button background
+button.primary.text,Component,Color,Cross-platform,Color.white,MaterialTheme.colorScheme.onPrimary,#FFFFFF,Contrast pair,Primary button text
+button.secondary.border,Component,Color,Cross-platform,Color.secondary,MaterialTheme.colorScheme.outline,#79747E,Light/Dark variants,Secondary button border
+textfield.border,Component,Color,Cross-platform,Color(.separator),MaterialTheme.colorScheme.outline,#79747E,Light/Dark variants,Text field border
+sheet.scrim,Component,Color,Cross-platform,Color.black.opacity(0.4),MaterialTheme.colorScheme.scrim,40% black,Light/Dark variants,Modal background scrim
+button.radius,Component,Shape,Cross-platform,cornerRadius 12,RoundedCornerShape(12.dp),12dp,N/A,Primary button radius
+card.radius,Component,Shape,Cross-platform,cornerRadius 16,RoundedCornerShape(16.dp),16dp,N/A,Card radius
+section.padding,Component,Spacing,Cross-platform,padding 16,Modifier.padding(16.dp),16dp,Adaptive,Section padding
+button.label,Component,Typography,Cross-platform,.font(.caption),MaterialTheme.typography.labelLarge,14sp,Scales with system,Button label style
+card.title,Component,Typography,Cross-platform,.font(.headline),MaterialTheme.typography.titleMedium,16sp,Scales with system,Card title style
 duration.instant,Primitive,Motion,Cross-platform,0.1,100L,100ms,N/A,Immediate feedback
 duration.fast,Primitive,Motion,Cross-platform,0.2,200L,200ms,N/A,Quick transitions
 duration.normal,Primitive,Motion,Cross-platform,0.3,300L,300ms,N/A,Standard transitions
