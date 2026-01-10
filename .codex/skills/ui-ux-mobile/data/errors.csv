@@ -4,6 +4,7 @@ Field Error Icon,Validation,Cross-platform,Image(systemName: exclamationmark.cir
 Error Summary Banner,Validation,Cross-platform,Custom banner at form top,Snackbar or Banner composable,Count of errors with links,Scroll to first error,Summary announced errors navigable
 Shake Animation,Feedback,Cross-platform,Custom shake offset animation,Custom shake modifier,Physical feedback,Focus on error field,Reduced motion alternative
 Retry Action,Recovery,Cross-platform,Button in banner or alert,Snackbar with action,Clear next step,Retry or undo action,Action label announced
+Empty State Guidance,Empty,Cross-platform,ContentUnavailableView with primary action,Empty state composable with action,Clear next step,Primary CTA to create or explore,Action announced
 Error Border Highlight,Validation,Cross-platform,.overlay with red border,OutlinedTextField isError,Visual field highlight,N/A visual only,Color not only indicator
 Network Error Toast,Connection,Cross-platform,Custom toast overlay,Snackbar with action,Connection lost message,Retry button,Toast announced
 Network Error Banner,Connection,Cross-platform,Persistent banner top,Persistent Banner composable,Offline mode indicator,Auto-dismiss on reconnect,Banner announced

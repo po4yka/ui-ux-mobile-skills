@@ -28,3 +28,4 @@ Download Progress,File,Cross-platform,ProgressView with bytes,LinearProgressIndi
 Stream Loading,Real-time,Cross-platform,Continuous update view,LaunchedEffect collect,Ongoing,Live data feeds,Updates announced
 Partial Loading,Incremental,Cross-platform,Section by section reveal,animateItemPlacement,Per section,Modular content,Section loading
 Error Recovery Loading,Retry,Cross-platform,Retry with progress,Retry with indicator,Retry attempt,After error,Retrying announced
+Empty State Placeholder,Empty,Cross-platform,ContentUnavailableView with action,Empty state composable with action,Until data exists,First-run or no results,Action announced

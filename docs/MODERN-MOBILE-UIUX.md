@@ -264,6 +264,11 @@ DON'T: "Error 422: Validation failed"
 
 **Rule:** Progress indicators must be honest
 
+**Empty states:**
+- Always include a clear next action
+- Explain why content is empty
+- Use friendly, concise copy
+
 ### Data Visualization and Statistics
 
 **Goals:**
@@ -315,6 +320,13 @@ DON'T: "Error 422: Validation failed"
 - Separate preview and controls when space allows
 - Avoid assumptions about orientation and window size
 - Preserve consistent control placement across modes
+
+### Trust and Privacy
+
+**Best Practices:**
+- Explain why you need sensitive permissions before the system prompt
+- Show where captured data is stored and how it is used
+- Offer a clear opt-out or alternate path when possible
 
 ### Pull-to-Refresh and Infinite Scroll
 
