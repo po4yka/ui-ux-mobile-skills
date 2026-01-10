@@ -72,3 +72,6 @@ Camera Viewfinder,Cross-platform,AVCaptureSession + AVCaptureVideoPreviewLayer,C
 Capture Controls,Cross-platform,Button + SF Symbols,IconButton,IconButton,Pressable,accessibilityLabel shutter flash zoom,Place shutter in thumb zone and label control states
 Capture Review,Cross-platform,PhotosPicker or custom review sheet,ModalBottomSheet or full screen,showModalBottomSheet,Modal,accessibilityLabel review,Allow retake and confirm with clear save target
 Grid/Level Overlay,Cross-platform,ZStack overlay,Canvas or Box overlay,CustomPaint,react-native-svg overlay,accessibilityLabel grid,Make grid optional and keep lines subtle
+Summary Header,Cross-platform,Section + LabeledContent,Column with Text,Column + Text,View + Text,accessibilityRole header,Show 1-3 key metrics before lists
+Detail Row,Cross-platform,List row with subtitle,ListItem with supporting text,ListTile,FlatList item,accessibilityRole listitem,Title + secondary text + chevron for drill-down
+Primary Action Bar,Cross-platform,safeAreaInset bottom + Button,BottomAppBar + Button,BottomAppBar,View positioned bottom,accessibilityRole button group,Keep single primary CTA in thumb zone

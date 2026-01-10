@@ -190,6 +190,27 @@ Based on Steven Hoober's research:
 - Limit overlapping gesture zones
 - Use onboarding to teach custom gestures
 
+### Information Hierarchy and Progressive Disclosure
+
+**Hierarchy model:**
+- **Glanceable:** key metrics, status, and summary at the top
+- **Tappable:** cards/rows that reveal more detail
+- **Detailed:** full-screen or sheet views for depth
+
+**Rules:**
+- Keep 1 primary CTA per screen
+- Use secondary actions inline or in overflow
+- Label drill-down rows with chevrons or clear affordances
+
+### Adaptive Layouts (Phone → Tablet/Foldable)
+
+**Recommendations:**
+- Phone: bottom navigation + thumb-zone primary action
+- Tablet: navigation rail + list/detail split
+- Foldable: split preview/content or use dual-pane layouts
+
+**Rule:** Primary actions must remain reachable in the thumb zone across sizes
+
 ### Onboarding Patterns
 
 | Pattern | Description | When to Use |
