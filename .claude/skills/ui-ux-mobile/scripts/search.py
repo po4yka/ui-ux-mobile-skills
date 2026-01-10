@@ -15,6 +15,8 @@ Formats: markdown (default), json, code-only, summary
 """
 
 import argparse
+import json
+import sys
 from core import CSV_CONFIG, AVAILABLE_STACKS, MAX_RESULTS, search, search_stack, search_multi_domain, filter_by_platform
 
 
@@ -99,6 +101,16 @@ def format_code_only(result):
 
     return "\n".join(output) if len(output) > 1 else "No code examples found"
 
+def emit_error(payload, output_format):
+    json_mode = output_format == "json"
+    if json_mode:
+        if isinstance(payload, dict):
+            print(json.dumps(payload, indent=2, ensure_ascii=False))
+        else:
+            print(json.dumps({"error": str(payload)}, indent=2, ensure_ascii=False))
+    else:
+        message = payload.get("error") if isinstance(payload, dict) else str(payload)
+        print(f"Error: {message}", file=sys.stderr)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="UI/UX Mobile Search")
@@ -115,31 +127,48 @@ if __name__ == "__main__":
     # Handle format argument
     output_format = "json" if args.json else args.format
 
+    if args.max_results < 1:
+        emit_error(f"--max-results must be >= 1 (got {args.max_results})", output_format)
+        sys.exit(1)
+
     # Stack search takes priority
-    if args.stack:
-        result = search_stack(args.query, args.stack, args.max_results)
-    elif args.domain and "," in args.domain:
-        # Multi-domain search
-        domains = [d.strip() for d in args.domain.split(",")]
-        valid_domains = [d for d in domains if d in CSV_CONFIG]
-        results = search_multi_domain(args.query, valid_domains, args.max_results, args.platform)
-        result = {
-            "domains": valid_domains,
-            "query": args.query,
-            "platform": args.platform,
-            "count": len(results),
-            "results": results
-        }
-    else:
-        result = search(args.query, args.domain, args.max_results)
-        # Apply platform filter for single domain search
-        if args.platform and result.get("results"):
-            result["results"] = filter_by_platform(result["results"], args.platform)
-            result["count"] = len(result["results"])
-            result["platform"] = args.platform
+    try:
+        if args.stack:
+            result = search_stack(args.query, args.stack, args.max_results)
+        elif args.domain and "," in args.domain:
+            # Multi-domain search
+            domains = [d.strip() for d in args.domain.split(",")]
+            valid_domains = [d for d in domains if d in CSV_CONFIG]
+            if not valid_domains:
+                emit_error(f"No valid domains in: {args.domain}. Valid domains: {', '.join(CSV_CONFIG.keys())}", output_format)
+                sys.exit(1)
+            results = search_multi_domain(args.query, valid_domains, args.max_results, args.platform)
+            result = {
+                "domains": valid_domains,
+                "query": args.query,
+                "platform": args.platform,
+                "count": len(results),
+                "results": results
+            }
+        else:
+            if args.domain and args.domain not in CSV_CONFIG:
+                emit_error(f"Unknown domain: {args.domain}. Valid domains: {', '.join(CSV_CONFIG.keys())}", output_format)
+                sys.exit(1)
+            result = search(args.query, args.domain, args.max_results)
+            # Apply platform filter for single domain search
+            if args.platform and result.get("results"):
+                result["results"] = filter_by_platform(result["results"], args.platform)
+                result["count"] = len(result["results"])
+                result["platform"] = args.platform
+    except Exception as exc:
+        emit_error(str(exc), output_format)
+        sys.exit(1)
+
+    if isinstance(result, dict) and "error" in result:
+        emit_error(result, output_format)
+        sys.exit(1)
 
     if output_format == "json":
-        import json
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:
         print(format_output(result, output_format))
