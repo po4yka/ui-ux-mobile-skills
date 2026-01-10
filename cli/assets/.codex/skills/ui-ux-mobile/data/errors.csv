@@ -3,6 +3,7 @@ Inline Field Error,Validation,Cross-platform,Text with .foregroundColor(.red),Te
 Field Error Icon,Validation,Cross-platform,Image(systemName: exclamationmark.circle),Icon with Icons.Error,Visual indicator,Tap for details,Icon has accessible label
 Error Summary Banner,Validation,Cross-platform,Custom banner at form top,Snackbar or Banner composable,Count of errors with links,Scroll to first error,Summary announced errors navigable
 Shake Animation,Feedback,Cross-platform,Custom shake offset animation,Custom shake modifier,Physical feedback,Focus on error field,Reduced motion alternative
+Retry Action,Recovery,Cross-platform,Button in banner or alert,Snackbar with action,Clear next step,Retry or undo action,Action label announced
 Error Border Highlight,Validation,Cross-platform,.overlay with red border,OutlinedTextField isError,Visual field highlight,N/A visual only,Color not only indicator
 Network Error Toast,Connection,Cross-platform,Custom toast overlay,Snackbar with action,Connection lost message,Retry button,Toast announced
 Network Error Banner,Connection,Cross-platform,Persistent banner top,Persistent Banner composable,Offline mode indicator,Auto-dismiss on reconnect,Banner announced

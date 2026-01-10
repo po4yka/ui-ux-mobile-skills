@@ -229,6 +229,15 @@ Based on Steven Hoober's research:
 - Use simple, non-technical language
 - Provide actionable suggestions
 - Implement real-time validation
+- Always include a recovery action (retry, undo, or help)
+
+### Input Efficiency
+
+**Guidelines:**
+- Use the correct keyboard type (email, number, phone)
+- Prefer autofill and textContentType hints
+- Validate inline with debounce to avoid noisy errors
+- Keep labels visible and provide format hints
 
 **Preventive Patterns:**
 ```
@@ -356,6 +365,11 @@ WCAG 2.2 became W3C Recommendation October 5, 2023.
 - Announce dynamic content changes
 - Proper heading hierarchy
 - Form labels associated with inputs
+
+**Focus and status:**
+- Use logical focus order for keyboard navigation
+- Announce status messages (errors, success, progress)
+- Provide text summaries for charts and visuals
 
 ### Color Contrast Requirements
 

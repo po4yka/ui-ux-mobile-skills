@@ -40,3 +40,5 @@ Save Draft,Persistence,Cross-platform,@AppStorage or UserDefaults,DataStore pref
 Clear Form,Reset,Cross-platform,Button to reset state,Button with state clear,Confirm before clear,Confirmation dialog,Clear action confirmed
 Form Analytics,Tracking,Cross-platform,onChange tracking,onValueChange tracking,On blur or error,N/A,Privacy compliant tracking
 Conditional Fields,Dynamic,Cross-platform,if/else in Form,AnimatedVisibility,Parent field change,Conditional error,Field appearance announced
+Inline Validation,Validation,Cross-platform,onChange with debounce,onValueChange with debounce,On change debounced,Inline helper or error,Announce state change
+Numeric Input,Input,Cross-platform,.keyboardType(.numberPad),KeyboardType.Number,On blur or submit,Inline error with format hint,Numeric keypad announced
