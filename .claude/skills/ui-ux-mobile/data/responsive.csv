@@ -1,0 +1,36 @@
+Pattern,Category,Platform,Width Range,SwiftUI Implementation,Compose Implementation,Navigation Change,Grid Columns,Use Case
+Compact Phone,Breakpoint,Cross-platform,0-599dp,@Environment horizontalSizeClass .compact,WindowWidthSizeClass.Compact,Bottom navigation,1-2,Single column layouts
+Medium Tablet,Breakpoint,Cross-platform,600-839dp,@Environment horizontalSizeClass .regular,WindowWidthSizeClass.Medium,Navigation rail optional,2-3,Two-pane optional
+Expanded Tablet,Breakpoint,Cross-platform,840dp+,@Environment horizontalSizeClass .regular,WindowWidthSizeClass.Expanded,Navigation rail or drawer,3-4,Multi-pane layouts
+Phone Portrait,Orientation,Cross-platform,Portrait narrow,GeometryReader width check,LocalConfiguration orientation,Stack navigation,1,Default phone layout
+Phone Landscape,Orientation,Cross-platform,Landscape wide,GeometryReader width check,LocalConfiguration orientation,May show split,2,Media playback games
+Tablet Portrait,Orientation,Cross-platform,Portrait medium,horizontalSizeClass check,WindowWidthSizeClass check,Rail or bottom,2,Reading productivity
+Tablet Landscape,Orientation,Cross-platform,Landscape wide,horizontalSizeClass check,WindowWidthSizeClass check,Permanent drawer,3-4,Full productivity
+Foldable Unfolded,Device,Android,Expanded,N/A,WindowInfoTracker foldingFeatures,Dual pane,2,Samsung Fold expanded
+Foldable Folded,Device,Android,Compact,N/A,WindowInfoTracker compact,Single pane,1,Samsung Fold closed
+Table-Top Mode,Posture,Android,Folded horizontal,N/A,FoldingFeature.State.HALF_OPENED,Split top/bottom,1+1,Video calls gaming
+Book Mode,Posture,Android,Folded vertical,N/A,FoldingFeature.State.HALF_OPENED,Split left/right,1+1,Reading e-books
+Single Column,Layout,Cross-platform,Compact,VStack or List,Column or LazyColumn,Full width content,1,Phone default
+Two Column,Layout,Cross-platform,Medium+,HStack with NavigationSplitView,Row with weight,Master-detail,2,Email chat apps
+Three Column,Layout,Cross-platform,Expanded,NavigationSplitView three column,Row with weights,Full navigation,3,Mail on iPad
+Grid Adaptive,Layout,Cross-platform,Variable,LazyVGrid adaptive,LazyVerticalGrid adaptive,Columns adjust,Variable,Photo galleries
+List-Detail,Pattern,Cross-platform,Medium+,NavigationSplitView,ListDetailPaneScaffold,Detail appears side,2,Settings email
+Master-Detail-Extra,Pattern,Cross-platform,Expanded,NavigationSplitView three column,ThreePaneScaffold,Third pane inspector,3,Advanced productivity
+Bottom Sheet Full,Modal,Cross-platform,Compact,.sheet fullHeight detent,ModalBottomSheet expanded,Covers screen,1,Actions on phone
+Bottom Sheet Partial,Modal,Cross-platform,Medium+,.sheet mediumDetent,ModalBottomSheet partial,Side panel option,1,Quick actions
+Dialog Centered,Modal,Cross-platform,All,.alert or custom dialog,AlertDialog,Centered modal,N/A,Confirmations
+Side Sheet,Modal,Cross-platform,Expanded,Custom side sheet,ModalDrawerSheet end,Slides from side,N/A,Filters tablet
+Safe Area Handling,Layout,iOS,All,.ignoresSafeArea or safeAreaInset,N/A,Content respects notch,N/A,Edge to edge
+Window Insets,Layout,Android,All,N/A,WindowInsets handling,Content respects bars,N/A,Edge to edge
+Dynamic Type,Text,iOS,All,.dynamicTypeSize environment,N/A,Text scales,N/A,Accessibility scaling
+Font Scale,Text,Android,All,N/A,LocalDensity fontScale,Text scales,N/A,Accessibility scaling
+Display Scale,Density,Cross-platform,All,UIScreen.main.scale,LocalDensity density,Assets scale,N/A,Retina support
+Touch Target Scaling,Interaction,Cross-platform,All,Minimum 44pt,Minimum 48dp,Scales with density,N/A,Accessibility
+Adaptive Icons,Assets,Cross-platform,All,Asset catalog with scales,Adaptive icon layers,Different sizes,N/A,App icons
+Image Srcset,Assets,Cross-platform,All,Asset catalog @2x @3x,Multiple density drawables,Resolution appropriate,N/A,Image assets
+Spacing Scale,Layout,Cross-platform,All,Custom spacing tokens,Custom spacing tokens,Proportional spacing,N/A,Consistent rhythm
+Breakpoint Hook,Logic,Cross-platform,All,@Environment horizontalSizeClass,calculateWindowSizeClass,Logic branching,N/A,Conditional UI
+Navigation Adaptation,Navigation,Cross-platform,Variable,NavigationSplitView automatic,NavigationSuiteScaffold,Auto rail/bottom/drawer,N/A,Adaptive navigation
+Toolbar Adaptation,Navigation,Cross-platform,Variable,.toolbar with placement,TopAppBar with actions,Actions move to menu,N/A,Action overflow
+Floating Action Position,Action,Cross-platform,Variable,Custom positioning,FloatingActionButton scaffold,Bottom right or expanded,N/A,FAB placement
+Search Expansion,Input,Cross-platform,Variable,.searchable placement,SearchBar expansion,Inline or overlay,N/A,Search UX

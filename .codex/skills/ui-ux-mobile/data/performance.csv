@@ -1,0 +1,31 @@
+Pattern,Category,Platform,SwiftUI Implementation,Compose Implementation,Impact,Measurement,Best Practice
+List Virtualization,Rendering,Cross-platform,LazyVStack LazyHStack,LazyColumn LazyRow,High - only visible items,Scroll FPS memory,Always use for long lists
+Image Caching,Memory,Cross-platform,URLCache or SDWebImage,Coil Glide caching,High - network reduction,Cache hit rate,Use disk and memory cache
+Image Compression,Network,Cross-platform,HEIC WebP format,WebP AVIF format,Medium - smaller downloads,Image size bytes,Serve optimized formats
+Image Sizing,Memory,Cross-platform,resizable() frame(),Modifier.size(),High - memory reduction,Memory footprint,Size to display dimensions
+Lazy Image Loading,Network,Cross-platform,AsyncImage,AsyncImage Coil,High - on-demand loading,Time to interactive,Load visible images first
+Blur Hash Placeholder,Perceived,Cross-platform,BlurHash decode,BlurHash composable,Medium - perceived speed,Time to visual,Instant placeholder
+Stable Identity,Rendering,Cross-platform,id() modifier explicit,key() parameter,High - avoid re-renders,Recomposition count,Use stable IDs always
+Derived State,State,Cross-platform,computed property,derivedStateOf,Medium - avoid recompute,Recomposition scope,Compute once read many
+Remember Expensive,Computation,Cross-platform,N/A (use StateObject),remember { expensive },High - avoid recompute,CPU time,Cache expensive calculations
+State Hoisting,Architecture,Cross-platform,Binding or ObservableObject,State hoisting pattern,Medium - predictable updates,State propagation,Lift state to needed level
+Side Effect Control,Lifecycle,Cross-platform,.task .onAppear,LaunchedEffect SideEffect,Medium - avoid leaks,Effect lifecycle,Cancel on dispose
+Debounce Input,Network,Cross-platform,Combine debounce,debounce flow operator,Medium - reduce calls,API call count,300-500ms for typing
+Throttle Events,Events,Cross-platform,Custom throttle,throttle flow operator,Medium - reduce processing,Event frequency,Scroll and resize events
+Pagination,Data,Cross-platform,onAppear with offset,Paging 3 library,High - bounded memory,Memory per page,20-50 items per page
+Prefetch Data,Network,Cross-platform,Custom prefetch logic,Paging prefetch distance,Medium - perceived speed,Time to display,Prefetch 1-2 pages ahead
+Background Processing,Thread,Cross-platform,Task with priority,Dispatchers.IO coroutine,High - UI responsiveness,Main thread time,Heavy work off main
+Main Thread Guard,Thread,Cross-platform,MainActor annotation,Dispatchers.Main,High - no ANR,ANR rate,UI updates on main only
+Animation Performance,Rendering,Cross-platform,drawingGroup(),graphicsLayer,Medium - smooth 60fps,Frame drops,Use hardware acceleration
+Reduce Motion,Accessibility,Cross-platform,@Environment reduceMotion,LocalReducedMotion,Low - user preference,N/A,Respect user setting
+Frame Rate Adaptive,Battery,Cross-platform,CADisplayLink timing,Choreographer timing,Low - battery,Frame rate,Lower for static content
+Memory Profiling,Debug,Cross-platform,Instruments Allocations,Android Profiler,N/A - tooling,Memory leaks,Profile regularly
+CPU Profiling,Debug,Cross-platform,Instruments Time Profiler,Android Profiler CPU,N/A - tooling,CPU hotspots,Profile on real devices
+Network Profiling,Debug,Cross-platform,Instruments Network,Network Profiler,N/A - tooling,Request timing,Monitor in development
+Startup Optimization,Launch,Cross-platform,Reduce initial work,Baseline Profiles,High - first impression,Cold start time,Defer non-critical
+App Size Reduction,Install,Cross-platform,Asset catalogs optimization,R8 ProGuard,Medium - install rate,APK IPA size,Remove unused resources
+Code Splitting,Bundle,Cross-platform,Lazy loading modules,Dynamic feature modules,Medium - initial size,Initial bundle,On-demand features
+Prewarming,Launch,Cross-platform,ScenePhase handling,App Startup library,Medium - perceived,Warm start time,Initialize early
+Battery Monitoring,Power,Cross-platform,ProcessInfo thermal,Battery intent receiver,Low - user trust,Battery drain,Reduce background work
+Network Efficiency,Power,Cross-platform,URLSession config,OkHttp config,Medium - data usage,Data transferred,Batch and compress
+Offline First,Resilience,Cross-platform,Core Data or SwiftData,Room or DataStore,High - usability,Offline capability,Cache critical data

@@ -55,6 +55,47 @@ CSV_CONFIG = {
         "file": "animations.csv",
         "search_cols": ["Animation Type", "Platform", "Use Case", "Reduce Motion Alternative"],
         "output_cols": ["Animation Type", "Platform", "Duration", "Easing", "SwiftUI API", "Compose API", "Use Case", "Reduce Motion Alternative"]
+    },
+    # New domains
+    "onboarding": {
+        "file": "onboarding.csv",
+        "search_cols": ["Pattern", "Type", "Platform", "Best For"],
+        "output_cols": ["Pattern", "Type", "Platform", "SwiftUI Implementation", "Compose Implementation", "Best For", "User Friction", "Conversion Impact", "Accessibility"]
+    },
+    "forms": {
+        "file": "forms.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "Validation Timing"],
+        "output_cols": ["Pattern", "Category", "Platform", "SwiftUI Implementation", "Compose Implementation", "Validation Timing", "Error Display", "Accessibility Notes"]
+    },
+    "responsive": {
+        "file": "responsive.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "Width Range"],
+        "output_cols": ["Pattern", "Category", "Platform", "Width Range", "SwiftUI Implementation", "Compose Implementation", "Navigation Change", "Grid Columns", "Use Case"]
+    },
+    "errors": {
+        "file": "errors.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "User Message Style"],
+        "output_cols": ["Pattern", "Category", "Platform", "SwiftUI Implementation", "Compose Implementation", "User Message Style", "Recovery Action", "Accessibility"]
+    },
+    "tokens": {
+        "file": "tokens.csv",
+        "search_cols": ["Token Name", "Level", "Category", "Platform"],
+        "output_cols": ["Token Name", "Level", "Category", "Platform", "SwiftUI Usage", "Compose Usage", "Example Value", "Theme Support", "Description"]
+    },
+    "spacing": {
+        "file": "spacing.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "Use Case"],
+        "output_cols": ["Pattern", "Category", "Platform", "Value iOS", "Value Android", "SwiftUI Usage", "Compose Usage", "Use Case", "Density Mode"]
+    },
+    "loading": {
+        "file": "loading.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "Use Case"],
+        "output_cols": ["Pattern", "Category", "Platform", "SwiftUI Implementation", "Compose Implementation", "Duration", "Use Case", "Accessibility Alternative"]
+    },
+    "performance": {
+        "file": "performance.csv",
+        "search_cols": ["Pattern", "Category", "Platform", "Impact"],
+        "output_cols": ["Pattern", "Category", "Platform", "SwiftUI Implementation", "Compose Implementation", "Impact", "Measurement", "Best Practice"]
     }
 }
 
@@ -184,12 +225,75 @@ def detect_domain(query):
         "navigation": ["navigation", "tab", "drawer", "stack", "bottom", "rail", "deep link", "routing"],
         "gesture": ["gesture", "tap", "swipe", "drag", "pinch", "long press", "haptic", "touch"],
         "accessibility": ["accessibility", "a11y", "wcag", "screen reader", "voiceover", "talkback", "contrast", "focus"],
-        "animation": ["animation", "motion", "spring", "transition", "ease", "duration", "reduce motion"]
+        "animation": ["animation", "motion", "spring", "transition", "ease", "duration", "reduce motion"],
+        # New domains
+        "onboarding": ["onboarding", "walkthrough", "coach", "tutorial", "empty state", "first launch", "welcome"],
+        "forms": ["form", "validation", "input", "field", "submit", "error", "required", "email", "password"],
+        "responsive": ["responsive", "tablet", "foldable", "breakpoint", "adaptive", "grid", "columns", "layout"],
+        "errors": ["error", "retry", "failure", "crash", "recover", "offline", "timeout", "validation"],
+        "tokens": ["token", "design token", "semantic", "primitive", "theme", "color role"],
+        "spacing": ["spacing", "padding", "margin", "gap", "grid", "baseline", "density"],
+        "loading": ["loading", "skeleton", "shimmer", "progress", "spinner", "refresh", "fetch"],
+        "performance": ["performance", "memory", "battery", "optimize", "cache", "lazy", "virtualization"]
     }
 
     scores = {domain: sum(1 for kw in keywords if kw in query_lower) for domain, keywords in domain_keywords.items()}
     best = max(scores, key=scores.get)
     return best if scores[best] > 0 else "component"
+
+
+def filter_by_platform(results, platform):
+    """Filter results by platform (ios, android, cross-platform)"""
+    if not platform:
+        return results
+
+    platform_lower = platform.lower()
+    platform_map = {
+        "ios": ["ios", "swiftui", "uikit", "apple", "iphone", "ipad"],
+        "android": ["android", "compose", "material", "kotlin", "google"],
+        "cross-platform": ["cross-platform", "flutter", "react native", "kmp", "multiplatform"]
+    }
+
+    keywords = platform_map.get(platform_lower, [platform_lower])
+
+    filtered = []
+    for row in results:
+        platform_value = str(row.get("Platform", "")).lower()
+        if any(kw in platform_value for kw in keywords) or "cross" in platform_value:
+            filtered.append(row)
+
+    return filtered if filtered else results  # Return original if no matches
+
+
+def search_multi_domain(query, domains, max_results=MAX_RESULTS, platform=None):
+    """Search across multiple domains"""
+    all_results = []
+
+    for domain in domains:
+        if domain not in CSV_CONFIG:
+            continue
+
+        config = CSV_CONFIG[domain]
+        filepath = DATA_DIR / config["file"]
+
+        if not filepath.exists():
+            continue
+
+        results = _search_csv(filepath, config["search_cols"], config["output_cols"], query, max_results)
+
+        # Add domain tag to results
+        for r in results:
+            r["_domain"] = domain
+
+        all_results.extend(results)
+
+    # Filter by platform if specified
+    if platform:
+        all_results = filter_by_platform(all_results, platform)
+
+    # Sort by BM25 score would require re-scoring, so just interleave for now
+    # Return top max_results
+    return all_results[:max_results]
 
 
 def search(query, domain=None, max_results=MAX_RESULTS):

@@ -4,6 +4,21 @@ import { AI_TYPES, type AIType } from './types/index.js';
 import { initCommand } from './commands/init.js';
 import { updateCommand } from './commands/update.js';
 import { versionsCommand } from './commands/versions.js';
+import { logger } from './utils/logger.js';
+
+function parseAIOption(value: unknown): AIType | undefined {
+  if (value === undefined || value === null) {
+    return undefined;
+  }
+  if (typeof value !== 'string' || !AI_TYPES.includes(value as AIType)) {
+    const readable = typeof value === 'string' ? value : JSON.stringify(value);
+    logger.error(`Invalid --ai value: ${readable}`);
+    logger.info(`Valid values: ${AI_TYPES.join(', ')}`);
+    logger.info('Example: uipro-mobile init --ai codex');
+    process.exit(1);
+  }
+  return value as AIType;
+}
 
 program
   .name('uipro-mobile')
@@ -17,7 +32,7 @@ program
   .option('-f, --force', 'Overwrite existing installation')
   .action(async (options) => {
     await initCommand({
-      ai: options.ai as AIType | undefined,
+      ai: parseAIOption(options.ai),
       force: options.force,
     });
   });
@@ -28,7 +43,7 @@ program
   .option('-a, --ai <type>', `AI assistant type (${AI_TYPES.join(', ')})`)
   .action(async (options) => {
     await updateCommand({
-      ai: options.ai as AIType | undefined,
+      ai: parseAIOption(options.ai),
     });
   });
 

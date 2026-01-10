@@ -1,0 +1,46 @@
+Token Name,Level,Category,Platform,SwiftUI Usage,Compose Usage,Example Value,Theme Support,Description
+color.primary,Semantic,Color,Cross-platform,Color.accentColor or custom,MaterialTheme.colorScheme.primary,#6200EE,Light/Dark variants,Main brand action color
+color.onPrimary,Semantic,Color,Cross-platform,Custom theme color,MaterialTheme.colorScheme.onPrimary,#FFFFFF,Contrast pair,Text on primary background
+color.secondary,Semantic,Color,Cross-platform,Custom theme color,MaterialTheme.colorScheme.secondary,#03DAC6,Light/Dark variants,Secondary actions and accents
+color.surface,Semantic,Color,Cross-platform,Color(.systemBackground),MaterialTheme.colorScheme.surface,#FFFFFF,Light/Dark variants,Background surfaces
+color.onSurface,Semantic,Color,Cross-platform,Color.primary,MaterialTheme.colorScheme.onSurface,#000000,Contrast pair,Text on surfaces
+color.error,Semantic,Color,Cross-platform,Color.red,MaterialTheme.colorScheme.error,#B00020,Light/Dark variants,Error states
+color.background,Semantic,Color,Cross-platform,Color(.systemBackground),MaterialTheme.colorScheme.background,#FAFAFA,Light/Dark variants,App background
+color.outline,Semantic,Color,Cross-platform,Color.secondary,MaterialTheme.colorScheme.outline,#79747E,Light/Dark variants,Borders dividers
+color.inverseSurface,Semantic,Color,Cross-platform,Custom inverse,MaterialTheme.colorScheme.inverseSurface,#313033,For contrast,Snackbars tooltips
+color.surfaceVariant,Semantic,Color,Cross-platform,Color(.secondarySystemBackground),MaterialTheme.colorScheme.surfaceVariant,#E7E0EC,Light/Dark variants,Cards containers
+typography.displayLarge,Semantic,Typography,Cross-platform,.font(.largeTitle),MaterialTheme.typography.displayLarge,57sp/64sp,Scales with system,Hero headlines
+typography.headlineMedium,Semantic,Typography,Cross-platform,.font(.title),MaterialTheme.typography.headlineMedium,28sp/36sp,Scales with system,Section titles
+typography.bodyLarge,Semantic,Typography,Cross-platform,.font(.body),MaterialTheme.typography.bodyLarge,16sp/24sp,Scales with system,Primary body text
+typography.labelMedium,Semantic,Typography,Cross-platform,.font(.caption),MaterialTheme.typography.labelMedium,12sp/16sp,Scales with system,Buttons labels
+spacing.xs,Primitive,Spacing,Cross-platform,4,4.dp,4dp/4pt,Density aware,Minimal spacing
+spacing.sm,Primitive,Spacing,Cross-platform,8,8.dp,8dp/8pt,Density aware,Small spacing
+spacing.md,Primitive,Spacing,Cross-platform,16,16.dp,16dp/16pt,Density aware,Default spacing
+spacing.lg,Primitive,Spacing,Cross-platform,24,24.dp,24dp/24pt,Density aware,Large spacing
+spacing.xl,Primitive,Spacing,Cross-platform,32,32.dp,32dp/32pt,Density aware,Extra large spacing
+spacing.xxl,Primitive,Spacing,Cross-platform,48,48.dp,48dp/48pt,Density aware,Section spacing
+radius.none,Primitive,Shape,Cross-platform,0,0.dp,0dp,N/A,Sharp corners
+radius.xs,Primitive,Shape,Cross-platform,4,4.dp,4dp,N/A,Subtle rounding
+radius.sm,Primitive,Shape,Cross-platform,8,8.dp,8dp,N/A,Small rounding
+radius.md,Primitive,Shape,Cross-platform,12,12.dp,12dp,N/A,Medium rounding
+radius.lg,Primitive,Shape,Cross-platform,16,16.dp,16dp,N/A,Large rounding
+radius.xl,Primitive,Shape,Cross-platform,28,28.dp,28dp,N/A,Pill shape partial
+radius.full,Primitive,Shape,Cross-platform,9999,CircleShape,Full circle,N/A,Circular elements
+elevation.level0,Semantic,Elevation,Cross-platform,0 shadow,0.dp elevation,0dp,N/A,Flat surface
+elevation.level1,Semantic,Elevation,Cross-platform,1pt shadow,1.dp elevation,1dp,Tonal in M3,Raised surface
+elevation.level2,Semantic,Elevation,Cross-platform,2pt shadow,3.dp elevation,3dp,Tonal in M3,Cards
+elevation.level3,Semantic,Elevation,Cross-platform,4pt shadow,6.dp elevation,6dp,Tonal in M3,FAB nav bars
+elevation.level4,Semantic,Elevation,Cross-platform,8pt shadow,8.dp elevation,8dp,Tonal in M3,Dialogs
+elevation.level5,Semantic,Elevation,Cross-platform,12pt shadow,12.dp elevation,12dp,Tonal in M3,Modal sheets
+opacity.disabled,Semantic,Opacity,Cross-platform,0.38,0.38f,38%,N/A,Disabled states
+opacity.hover,Semantic,Opacity,Cross-platform,0.08,0.08f,8%,N/A,Hover overlay
+opacity.focus,Semantic,Opacity,Cross-platform,0.12,0.12f,12%,N/A,Focus overlay
+opacity.pressed,Semantic,Opacity,Cross-platform,0.12,0.12f,12%,N/A,Pressed overlay
+opacity.dragged,Semantic,Opacity,Cross-platform,0.16,0.16f,16%,N/A,Dragged overlay
+duration.instant,Primitive,Motion,Cross-platform,0.1,100L,100ms,N/A,Immediate feedback
+duration.fast,Primitive,Motion,Cross-platform,0.2,200L,200ms,N/A,Quick transitions
+duration.normal,Primitive,Motion,Cross-platform,0.3,300L,300ms,N/A,Standard transitions
+duration.slow,Primitive,Motion,Cross-platform,0.5,500L,500ms,N/A,Emphasis transitions
+easing.standard,Primitive,Motion,Cross-platform,.easeInOut,FastOutSlowInEasing,Cubic bezier,N/A,General purpose
+easing.decelerate,Primitive,Motion,Cross-platform,.easeOut,LinearOutSlowInEasing,Cubic bezier,N/A,Entering elements
+easing.accelerate,Primitive,Motion,Cross-platform,.easeIn,FastOutLinearInEasing,Cubic bezier,N/A,Exiting elements

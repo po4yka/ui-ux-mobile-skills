@@ -1,0 +1,31 @@
+Pattern,Type,Platform,SwiftUI Implementation,Compose Implementation,Best For,User Friction,Conversion Impact,Accessibility
+Progressive Disclosure,Contextual,Cross-platform,.sheet with @State progression,ModalBottomSheet with state,Complex apps feature discovery,Low - learns in context,High - 40% better retention,Screen reader announces new elements
+Coach Marks,Overlay,Cross-platform,Custom overlay with GeometryReader,.overlay with Modifier positioning,Discoverable UI features,Medium - interrupts flow,Medium - 25% feature adoption,Provide skip button and text descriptions
+Walkthrough Carousel,Intro,Cross-platform,TabView with PageTabViewStyle,HorizontalPager with indicators,Value proposition first launch,High - delays app usage,High if under 3 screens,Support swipe and button navigation
+Empty State Guide,Contextual,Cross-platform,ContentUnavailableView or custom,Custom composable with actions,New user activation,Low - natural discovery,High - guides first action,Clear action labels not just icons
+Permission Priming,Pre-prompt,Cross-platform,Custom sheet before system alert,Dialog before permission request,Camera location notifications,Medium - extra step,High - 2x permission grants,Explain benefit clearly in text
+Account Deferral,Delayed,Cross-platform,NavigationStack with guest mode,NavHost with anonymous user,Reducing signup friction,Very Low - explore first,High - 30% more signups,Guest mode fully accessible
+Tooltip Sequence,Contextual,Cross-platform,.popover with sequential states,TooltipBox with step tracking,Feature education post-launch,Low - dismissible,Medium - feature awareness,Keyboard navigable tooltips
+Video Onboarding,Intro,Cross-platform,VideoPlayer with AVKit,ExoPlayer with Compose,Emotional brand connection,High - passive viewing,Medium - brand recall,Captions and audio descriptions required
+Interactive Tutorial,Guided,Cross-platform,Custom step-by-step with validation,Stepper with completion tracking,Complex workflows,Medium - time investment,High - task completion,Allow skip to any step
+Gamified Onboarding,Engagement,Cross-platform,Custom progress with rewards,Custom with animation rewards,User engagement apps,Medium - game mechanics,High - completion rates,Progress announced to screen readers
+Checklist Onboarding,Task-based,Cross-platform,List with completion state,LazyColumn with checkmarks,Multi-step setup,Low - clear progress,High - setup completion,Checkbox states announced
+Story Format,Immersive,Cross-platform,Custom full-screen stories,Custom with gesture detection,Social and lifestyle apps,Medium - content consumption,Medium - emotional connection,Pause and skip controls required
+Benefit-First Screens,Value,Cross-platform,Custom value proposition cards,Card composables with CTAs,Subscription apps,Medium - reading required,High - conversion focus,Large readable text
+Feature Spotlight,Highlight,Cross-platform,.matchedGeometryEffect highlight,Custom focus animation,New feature announcements,Low - single feature,Medium - feature adoption,Announce spotlight focus
+Personalization Flow,Setup,Cross-platform,Form with preferences,Preference screens with state,Content apps,Medium - choices required,High - personalized experience,Form labels and descriptions
+Skip Option Always,Escape,Cross-platform,Button in navigation bar,TopAppBar action,All onboarding types,Reduces friction,Prevents abandonment,Clearly labeled skip button
+Progress Indicator,Feedback,Cross-platform,ProgressView or custom steps,LinearProgressIndicator,Multi-screen flows,Reduces uncertainty,Improves completion,Announce step X of Y
+Contextual Hints,Just-in-time,Cross-platform,.help modifier or custom tips,Custom tooltip on first use,Feature discovery,Very Low - appears when needed,High - contextual learning,Text alternative for visual hints
+Onboarding Reset,Recovery,Cross-platform,Settings option to replay,Settings with reset state,Users who skipped,N/A - recovery option,Helps confused users,Accessible settings path
+A/B Test Variants,Optimization,Cross-platform,Feature flags with variants,Remote config variants,Conversion optimization,Varies by variant,Data-driven improvement,Test accessibility of all variants
+Social Proof Intro,Trust,Cross-platform,Custom with testimonials,Card with user reviews,E-commerce fintech,Low - builds trust,High - trust conversion,Alt text for user images
+Demo Mode,Try-before,Cross-platform,Sample data environment,Mock data state,Complex productivity apps,Very Low - hands-on,High - understanding value,Demo clearly announced
+Quick Actions Intro,Speed,Cross-platform,Shortcuts education screen,Quick action tutorial,Productivity apps,Low - time saving,Medium - power user adoption,Keyboard shortcuts explained
+Biometric Setup,Security,Cross-platform,LocalAuthentication prompt,BiometricPrompt integration,Security apps,Low - convenience trade,High - security adoption,Fallback to passcode explained
+Notification Primer,Engagement,Cross-platform,Custom before requestAuthorization,Custom before permission,Engagement retention,Medium - permission ask,High - if value explained,Clear benefit text
+Dark Mode Choice,Preference,Cross-platform,Appearance picker on first launch,Theme selection dialog,All apps,Very Low - quick choice,Medium - user satisfaction,High contrast option shown
+Language Selection,Localization,Cross-platform,Locale picker first launch,Language selection screen,International apps,Low - important choice,High - localized experience,Native language names shown
+Accessibility Setup,Inclusion,Cross-platform,Accessibility options highlight,Accessibility settings intro,All apps,Low - optional but visible,High - inclusive design,VoiceOver TalkBack intro option
+Data Import Wizard,Migration,Cross-platform,Multi-step import flow,Stepper with import progress,Switching users,Medium - technical,High - data continuity,Progress and errors announced
+Terms Acceptance,Legal,Cross-platform,ScrollView with accept button,LazyColumn with checkbox,All apps requiring consent,Medium - legal reading,Required - compliance,Readable terms screen reader friendly

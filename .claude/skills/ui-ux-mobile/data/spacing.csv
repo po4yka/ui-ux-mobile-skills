@@ -1,0 +1,40 @@
+Pattern,Category,Platform,Value iOS,Value Android,SwiftUI Usage,Compose Usage,Use Case,Density Mode
+4pt Grid,System,Cross-platform,4pt base,4dp base,Multiples of 4,Multiples of 4.dp,All spacing derived from 4,Standard
+8pt Grid,System,Cross-platform,8pt base,8dp base,Multiples of 8,Multiples of 8.dp,Common baseline grid,Standard
+Micro Spacing,Element,Cross-platform,2pt,2dp,.padding(2),Modifier.padding(2.dp),Icon to text gap,Compact
+Tiny Spacing,Element,Cross-platform,4pt,4dp,.padding(4),Modifier.padding(4.dp),Tight element groups,Standard
+Small Spacing,Element,Cross-platform,8pt,8dp,.padding(8),Modifier.padding(8.dp),Related items,Standard
+Medium Spacing,Element,Cross-platform,12pt,12dp,.padding(12),Modifier.padding(12.dp),Card internal padding,Standard
+Default Spacing,Element,Cross-platform,16pt,16dp,.padding(16),Modifier.padding(16.dp),Standard padding,Standard
+Large Spacing,Element,Cross-platform,24pt,24dp,.padding(24),Modifier.padding(24.dp),Section separation,Standard
+Extra Large Spacing,Section,Cross-platform,32pt,32dp,.padding(32),Modifier.padding(32.dp),Major sections,Standard
+Huge Spacing,Section,Cross-platform,48pt,48dp,.padding(48),Modifier.padding(48.dp),Hero sections,Expanded
+Safe Area Top,Inset,iOS,47pt+ notch,N/A,.safeAreaInset(edge: .top),N/A,Status bar notch,Device specific
+Safe Area Bottom,Inset,iOS,34pt home indicator,N/A,.safeAreaInset(edge: .bottom),N/A,Home indicator,Device specific
+Status Bar Height,Inset,Android,N/A,24dp typical,N/A,WindowInsets.statusBars,Status bar,Device specific
+Navigation Bar Height,Inset,Android,N/A,48dp typical,N/A,WindowInsets.navigationBars,Navigation bar,Device specific
+Touch Target Minimum,Interactive,iOS,44x44pt,N/A,.frame(minWidth: 44 minHeight: 44),N/A,Tappable elements,Accessibility
+Touch Target Minimum,Interactive,Android,N/A,48x48dp,N/A,.size(48.dp),Tappable elements,Accessibility
+List Item Height,Component,iOS,44pt,N/A,List row default,N/A,Standard list row,Standard
+List Item Height,Component,Android,N/A,56dp one-line,N/A,.height(56.dp),Single line item,Standard
+List Item Two Line,Component,Android,N/A,72dp,N/A,.height(72.dp),Two line item,Standard
+List Item Three Line,Component,Android,N/A,88dp,N/A,.height(88.dp),Three line item,Standard
+Card Padding,Component,Cross-platform,16pt,16dp,.padding(16),Modifier.padding(16.dp),Card internal,Standard
+Card Margin,Component,Cross-platform,8pt,8dp,VStack spacing: 8,Arrangement.spacedBy(8.dp),Between cards,Standard
+Button Height,Component,iOS,44pt,N/A,.frame(height: 44),N/A,Standard button,Standard
+Button Height,Component,Android,N/A,40dp,N/A,.height(40.dp),Filled button,Standard
+FAB Size,Component,Cross-platform,56pt,56dp,.frame(width: 56 height: 56),.size(56.dp),Standard FAB,Standard
+FAB Mini Size,Component,Cross-platform,40pt,40dp,.frame(width: 40 height: 40),.size(40.dp),Mini FAB,Compact
+Icon Button Size,Component,Cross-platform,44pt,48dp,.frame(width: 44 height: 44),.size(48.dp),Icon buttons,Standard
+App Bar Height,Component,iOS,44pt nav bar,N/A,NavigationStack default,N/A,Navigation bar,Standard
+App Bar Height,Component,Android,N/A,64dp,N/A,TopAppBar default,Top app bar,Standard
+Tab Bar Height,Component,iOS,49pt,N/A,TabView default,N/A,Tab bar,Standard
+Bottom Nav Height,Component,Android,N/A,80dp,N/A,NavigationBar default,Bottom navigation,Standard
+Sheet Detent Medium,Modal,iOS,50% screen,N/A,.presentationDetents([.medium]),N/A,Half sheet,Standard
+Sheet Detent Large,Modal,iOS,90% screen,N/A,.presentationDetents([.large]),N/A,Full sheet,Standard
+Dialog Width,Modal,Cross-platform,270pt iOS,280-560dp,Custom frame,Modifier.width(...),Alert dialog,Standard
+Screen Edge Padding,Layout,Cross-platform,16pt,16dp,.padding(.horizontal 16),Modifier.padding(horizontal = 16.dp),Edge to content,Standard
+Compact Density,Density,Android,N/A,-4dp adjustment,N/A,Density.Compact custom,Dense layouts,Compact
+Standard Density,Density,Android,N/A,0dp adjustment,N/A,Density.Default,Normal layouts,Standard
+Comfortable Density,Density,Android,N/A,+4dp adjustment,N/A,Density.Comfortable custom,Spaced layouts,Expanded
+Baseline Grid,Typography,Cross-platform,4pt baseline,4dp baseline,Custom alignment,Custom baseline,Text alignment,Standard

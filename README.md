@@ -1,6 +1,6 @@
 # UI/UX Mobile - Design Intelligence for Mobile Apps
 
-AI-powered design intelligence toolkit for mobile UI/UX development. Provides searchable databases of styles, colors, typography, components, navigation, gestures, accessibility, and animations.
+AI-powered design intelligence toolkit for mobile UI/UX development. Provides searchable databases of styles, colors, typography, components, navigation, gestures, accessibility, animations, onboarding, forms, responsive layouts, errors, design tokens, spacing, loading states, and performance patterns.
 
 ## Supported AI Assistants
 
@@ -15,8 +15,11 @@ AI-powered design intelligence toolkit for mobile UI/UX development. Provides se
 
 ## Features
 
-- **8 Search Domains**: style, color, typography, component, navigation, gesture, accessibility, animation
+- **16 Search Domains**: style, color, typography, component, navigation, gesture, accessibility, animation, onboarding, forms, responsive, errors, tokens, spacing, loading, performance
 - **7 Stack Guides**: SwiftUI, Jetpack Compose, Flutter, React Native, KMP, Material 3, Liquid Glass
+- **Multi-domain Search**: Search across multiple domains with comma-separated values
+- **Platform Filtering**: Filter results by ios, android, or cross-platform
+- **Output Formats**: markdown, json, code-only, summary
 - **Zero Dependencies**: Pure Python with BM25 search algorithm
 - **CLI Installer**: Easy installation for Claude and Codex
 
@@ -65,6 +68,28 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "bottom sheet" --domain co
 
 # Search accessibility
 python3 .claude/skills/ui-ux-mobile/scripts/search.py "screen reader" --domain accessibility
+
+# Search onboarding patterns
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "walkthrough" --domain onboarding
+
+# Search responsive layouts
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "tablet" --domain responsive
+```
+
+### Advanced Search
+
+```bash
+# Multi-domain search
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "button" --domain component,animation
+
+# Platform filtering
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "navigation" --domain navigation --platform ios
+
+# Code-only output
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "glass" --stack swiftui --format code-only
+
+# JSON output
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "validation" --domain forms --format json
 ```
 
 ### Search by Stack
@@ -95,6 +120,14 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "expect actual" --stack km
 | `gesture` | Touch interactions (swipe, tap, haptic) |
 | `accessibility` | A11y guidelines (WCAG, VoiceOver, TalkBack) |
 | `animation` | Motion design (spring, ease, reduce motion) |
+| `onboarding` | User onboarding (walkthrough, coach marks, progressive) |
+| `forms` | Form validation (error states, multi-step, submit) |
+| `responsive` | Tablet/foldable layouts (breakpoint, adaptive, grid) |
+| `errors` | Error handling (retry, recovery, offline, graceful degradation) |
+| `tokens` | Design tokens (primitive, semantic, component, alias) |
+| `spacing` | Spacing systems (padding, margin, baseline grid, density) |
+| `loading` | Loading states (skeleton, shimmer, progress, streaming) |
+| `performance` | UI optimization (lazy loading, caching, virtualization) |
 
 ## Available Stacks
 

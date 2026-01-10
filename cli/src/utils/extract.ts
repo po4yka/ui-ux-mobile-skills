@@ -6,6 +6,18 @@ import { AI_FOLDERS, AI_SKILL_PATH, type AIType } from '../types/index.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+function formatFsError(error: unknown): string {
+  return error instanceof Error ? error.message : String(error);
+}
+
+function runFs(action: () => void, context: string): void {
+  try {
+    action();
+  } catch (error) {
+    throw new Error(`${context}: ${formatFsError(error)}`);
+  }
+}
+
 // Assets are located relative to the compiled dist folder
 function getAssetsDir(): string {
   // When running from dist/, go up to cli/, then into assets/
@@ -24,7 +36,7 @@ export function extractSkill(targetDir: string, ai: Exclude<AIType, 'all'>, forc
   // Create parent directories if needed
   const targetParentDir = join(targetDir, AI_FOLDERS[ai], 'skills');
   if (!existsSync(targetParentDir)) {
-    mkdirSync(targetParentDir, { recursive: true });
+    runFs(() => mkdirSync(targetParentDir, { recursive: true }), `Failed to create directory ${targetParentDir}`);
   }
 
   // Remove existing if force is true
@@ -32,11 +44,14 @@ export function extractSkill(targetDir: string, ai: Exclude<AIType, 'all'>, forc
     if (!force) {
       throw new Error(`Skill already exists at ${targetSkillPath}. Use --force to overwrite.`);
     }
-    rmSync(targetSkillPath, { recursive: true });
+    runFs(() => rmSync(targetSkillPath, { recursive: true }), `Failed to remove existing skill at ${targetSkillPath}`);
   }
 
   // Copy skill directory
-  cpSync(sourceSkillPath, targetSkillPath, { recursive: true });
+  runFs(
+    () => cpSync(sourceSkillPath, targetSkillPath, { recursive: true }),
+    `Failed to copy skill from ${sourceSkillPath} to ${targetSkillPath}`,
+  );
 }
 
 export function extractAll(targetDir: string, force = false): void {

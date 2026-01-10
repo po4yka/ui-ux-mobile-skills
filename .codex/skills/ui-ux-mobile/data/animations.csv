@@ -46,3 +46,26 @@ Swipe Dismiss,Cross-platform,300ms,Spring,DragGesture offset,SwipeToDismiss,Card
 Flip Card,Cross-platform,400ms,Ease in out,rotation3DEffect,Custom rotation 3D,Card reveal games,Instant flip no animation
 Morph Shape,Cross-platform,300ms,Spring,Shape animation,Custom path animation,Button state changes,Instant shape change
 Path Animation,Cross-platform,Variable,Custom,Path trim animation,Canvas path animate,Drawing reveal progress,Instant path
+M3 Standard,Material 3,300ms,Cubic 0.2 0 0 1,Custom cubic curve,EmphasizedEasing,General transitions,150ms or instant
+M3 Standard Accelerate,Material 3,200ms,Cubic 0.3 0 1 1,Custom cubic curve,EmphasizedAccelerateEasing,Exit animations,Instant removal
+M3 Standard Decelerate,Material 3,250ms,Cubic 0 0 0 1,Custom cubic curve,EmphasizedDecelerateEasing,Enter animations,Instant appearance
+M3 Emphasized,Material 3,500ms,Cubic 0.2 0 0 1,Custom cubic curve,EmphasizedEasing,Important transitions,300ms standard
+M3 Emphasized Accelerate,Material 3,200ms,Cubic 0.3 0 0.8 0.15,Custom cubic curve,EmphasizedAccelerateEasing,Exit emphasis,Instant removal
+M3 Emphasized Decelerate,Material 3,400ms,Cubic 0.05 0.7 0.1 1,Custom cubic curve,EmphasizedDecelerateEasing,Enter emphasis,Instant appearance
+Interactive Spring,iOS 26,Variable,Spring with velocity tracking,.spring(response: duration dampingFraction: 0.8),spring(visibilityThreshold: 0.01f),Gesture-driven animations,No spring linear
+Velocity Preserve,iOS 26,Variable,Spring preserving gesture velocity,Custom velocity spring,spring(),Swipe to action,Instant
+Glass Tint Animate,iOS 26,~300ms,Spring,.glassEffect animate,N/A,Glass color adaptation,Instant tint change
+Liquid Bounce,iOS 26,~400ms,Spring bounce 0.4,.spring(bounce: 0.4),N/A,Glass element press,Reduced bounce
+Predictive Back,Android 14+,300ms,Emphasized,N/A,PredictiveBackHandler,Back gesture preview,No preview
+Shared Element,Cross-platform,300ms,Emphasized,.matchedGeometryEffect,sharedElement() modifier,List to detail,Crossfade
+Edge Swipe Preview,Android,200ms,Decelerate,N/A,SwipeBackHandler,Back gesture preview,Instant back
+Loading Dots,Cross-platform,600ms loop,Ease in out stagger,Custom dot animation,Custom repeating animation,Loading indicator,Static dots
+Typing Indicator,Cross-platform,800ms loop,Ease in out,Custom bouncing dots,Custom animation spec,Chat typing,Static ellipsis
+Scroll Snap,Cross-platform,200ms,Spring,.scrollTargetBehavior(.paging),flingBehavior = paging,Carousel snapping,Instant snap
+Overscroll Glow,Android,Variable,Spring,N/A,OverscrollEffect glow,Scroll boundary,Disabled
+Overscroll Bounce,iOS,Variable,Spring,Built-in bounce,N/A,Scroll boundary,Reduced bounce
+Expand Collapse,Cross-platform,300ms,Ease in out,.animation with height,animateContentSize,Accordion sections,Instant expand
+Reorder Drag,Cross-platform,200ms,Spring,DragGesture with animation,LazyColumn animateItemPlacement,List reordering,Instant reorder
+Swipe Actions,Cross-platform,200ms,Spring,.swipeActions modifier,SwipeToDismiss,Row actions,Button tap instead
+Zoom Gesture,Cross-platform,Variable,Spring,MagnificationGesture,detectTransformGestures,Image zoom,Pinch disabled
+Rotation Gesture,Cross-platform,Variable,Spring,RotationGesture,detectTransformGestures,Image rotate,Rotation disabled

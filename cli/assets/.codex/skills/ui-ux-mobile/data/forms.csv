@@ -1,0 +1,42 @@
+Pattern,Category,Platform,SwiftUI Implementation,Compose Implementation,Validation Timing,Error Display,Accessibility Notes
+Single-Line Text Input,Input,Cross-platform,TextField with .textFieldStyle,OutlinedTextField,On blur or submit,Inline below field,Label always visible not placeholder only
+Multi-Line Text Area,Input,Cross-platform,TextEditor with frame,OutlinedTextField multiline,On blur or submit,Inline below field,Character count announced
+Password Field,Input,Cross-platform,SecureField with toggle visibility,TextField visualTransformation,On submit,Inline with requirements,Password requirements listed upfront
+Email Input,Input,Cross-platform,TextField .keyboardType(.emailAddress),OutlinedTextField keyboard Email,On blur with regex,Inline with suggestion,Announce valid/invalid state
+Phone Input,Input,Cross-platform,TextField .keyboardType(.phonePad),OutlinedTextField keyboard Phone,On blur with formatting,Inline with format hint,Country code selector accessible
+Number Input,Input,Cross-platform,TextField .keyboardType(.numberPad),OutlinedTextField keyboard Number,On change or blur,Inline with range hint,Stepper alternative for small ranges
+Date Picker,Selection,Cross-platform,DatePicker with displayedComponents,DatePickerDialog,On selection,Inline if invalid range,Full date announced on selection
+Time Picker,Selection,Cross-platform,DatePicker .hourAndMinute,TimePickerDialog,On selection,Inline if invalid,Time announced on selection
+Dropdown Select,Selection,Cross-platform,Picker with .menu style,ExposedDropdownMenuBox,On selection,Inline below,Options announced on focus
+Multi-Select Chips,Selection,Cross-platform,Custom chip flow layout,FlowRow with FilterChip,On selection change,Summary of selections,Selected state announced per chip
+Radio Group,Selection,Cross-platform,Picker with .radioGroup or custom,RadioButton group Column,On selection,Group error above,Group label and selected announced
+Checkbox Group,Selection,Cross-platform,Toggle in List or custom,Checkbox group Column,On submit,Group error above,Each checkbox labeled
+Toggle Switch,Boolean,Cross-platform,Toggle,Switch,Immediate,Inline if dependent,On/off state announced
+Slider Input,Range,Cross-platform,Slider with value binding,Slider with valueRange,On release,Below with current value,Value announced on change
+Stepper Input,Numeric,Cross-platform,Stepper with range,Custom stepper buttons,Immediate,Inline with bounds,Value and bounds announced
+Search Input,Search,Cross-platform,.searchable modifier,SearchBar composable,On typing debounced,Inline suggestions,Results count announced
+Autocomplete,Search,Cross-platform,Custom with suggestions list,ExposedDropdownMenuBox,On typing debounced,Dropdown suggestions,Suggestions announced
+Address Input,Complex,Cross-platform,Multi-field or autocomplete API,Multi-field with Places API,Per field or autocomplete,Per field errors,Autocomplete results navigable
+Credit Card Input,Payment,Cross-platform,Custom formatted fields,Custom with visual transformation,On blur with Luhn,Card type detected inline,Card type announced
+OTP Code Input,Verification,Cross-platform,Custom segmented fields,Custom OTP input fields,On complete,Inline error,Auto-advance announced
+File Upload,Media,Cross-platform,.fileImporter modifier,ActivityResultLauncher,On selection,File type/size error,File name announced
+Image Picker,Media,Cross-platform,PhotosPicker,rememberLauncherForActivityResult,On selection,Format/size error,Image description option
+Signature Pad,Capture,Cross-platform,Custom Canvas drawing,Custom Canvas composable,On submit,Clear and retry option,Alternative text input option
+Rating Stars,Feedback,Cross-platform,Custom star buttons,Custom rating bar,Immediate,N/A usually optional,Rating value announced
+Inline Validation,Validation,Cross-platform,onChange with debounce,onValueChange with delay,200-500ms after typing,Inline below field,Error announced on blur
+Real-time Validation,Validation,Cross-platform,onChange immediate,onValueChange immediate,Immediate as typing,Inline with checkmark,Valid state announced
+Submit Validation,Validation,Cross-platform,onSubmit validation,Button onClick validation,On form submit,Scroll to first error,Error summary announced
+Cross-field Validation,Validation,Cross-platform,Custom validation logic,Custom validation state,On dependent field change,Both fields show error,Relationship explained
+Format Masking,Format,Cross-platform,Custom formatter binding,VisualTransformation,As typing,Format hint shown,Format announced
+Required Indicator,Visual,Cross-platform,Label with asterisk,Label with asterisk text,On submit if empty,Field highlighted,Required announced in label
+Optional Indicator,Visual,Cross-platform,Label with (optional),Label with optional text,N/A,N/A,Optional announced in label
+Helper Text,Guidance,Cross-platform,Text below field always,Supporting text parameter,N/A,Replaced by error,Helper text associated with field
+Character Counter,Limit,Cross-platform,Custom counter overlay,Supporting text with count,As typing near limit,Counter turns error color,Count announced periodically
+Multi-Step Form,Flow,Cross-platform,NavigationStack with steps,NavHost with step screens,Per step,Step-level summary,Progress announced per step
+Accordion Sections,Organization,Cross-platform,DisclosureGroup,Expandable cards,Per section,Section-level errors,Expanded state announced
+Inline Editing,Edit,Cross-platform,Tap to edit pattern,Clickable text to field,On blur or confirm,Inline error,Edit mode announced
+Form Autofill,Efficiency,Cross-platform,.textContentType hints,autofillHints parameter,Prefilled data,Validate autofilled,Autofill announced
+Save Draft,Persistence,Cross-platform,@AppStorage or UserDefaults,DataStore preferences,On field change,Draft indicator,Draft saved announced
+Clear Form,Reset,Cross-platform,Button to reset state,Button with state clear,Confirm before clear,Confirmation dialog,Clear action confirmed
+Form Analytics,Tracking,Cross-platform,onChange tracking,onValueChange tracking,On blur or error,N/A,Privacy compliant tracking
+Conditional Fields,Dynamic,Cross-platform,if/else in Form,AnimatedVisibility,Parent field change,Conditional error,Field appearance announced

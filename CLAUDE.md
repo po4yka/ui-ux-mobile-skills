@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-UI/UX Mobile is an AI-powered design intelligence toolkit providing searchable databases of mobile UI styles, color systems, typography scales, components, navigation patterns, gestures, accessibility guidelines, and animations. It works as a skill for Claude Code and OpenAI Codex.
+UI/UX Mobile is an AI-powered design intelligence toolkit providing searchable databases of mobile UI styles, color systems, typography scales, components, navigation patterns, gestures, accessibility guidelines, animations, onboarding patterns, forms, responsive layouts, error handling, design tokens, spacing systems, loading states, and performance patterns. It works as a skill for Claude Code and OpenAI Codex.
 
 Supports:
 - **iOS**: SwiftUI with iOS 26 Liquid Glass
@@ -14,10 +14,16 @@ Supports:
 ## Search Command
 
 ```bash
-python3 .claude/skills/ui-ux-mobile/scripts/search.py "<query>" --domain <domain> [-n <max_results>]
+python3 .claude/skills/ui-ux-mobile/scripts/search.py "<query>" --domain <domain> [-n <max_results>] [--platform <platform>] [--format <format>]
 ```
 
-**Domain search:**
+**Search options:**
+- `--domain, -d` - Search domain(s), comma-separated for multi-domain
+- `--platform, -p` - Filter by platform: `ios`, `android`, `cross-platform`
+- `--format, -f` - Output format: `markdown`, `json`, `code-only`, `summary`
+- `--max-results, -n` - Maximum results (default: 3)
+
+**Available domains (16):**
 - `style` - Visual styles by platform (Material You, Liquid Glass, minimal)
 - `color` - Color palettes and systems (dynamic color, tonal palette)
 - `typography` - Type scales and fonts (display, headline, body)
@@ -26,6 +32,14 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "<query>" --domain <domain
 - `gesture` - Touch interactions (swipe, tap, haptic)
 - `accessibility` - A11y guidelines (WCAG, VoiceOver, TalkBack)
 - `animation` - Motion design (spring, ease, reduce motion)
+- `onboarding` - User onboarding patterns (walkthrough, coach marks, progressive)
+- `forms` - Form validation and inputs (validation, error state, multi-step)
+- `responsive` - Tablet/foldable layouts (breakpoint, adaptive, grid)
+- `errors` - Error handling patterns (retry, recovery, offline)
+- `tokens` - Design token architecture (primitive, semantic, component)
+- `spacing` - Spacing and sizing systems (padding, baseline grid, density)
+- `loading` - Loading state patterns (skeleton, shimmer, progress)
+- `performance` - UI performance optimization (lazy loading, caching)
 
 **Stack search:**
 ```bash
@@ -42,7 +56,7 @@ ui-ux-mobile-skills/
 │   ├── scripts/
 │   │   ├── search.py                # CLI entry point
 │   │   └── core.py                  # BM25 search engine
-│   └── data/                        # CSV databases (8 domains + 7 stacks)
+│   └── data/                        # CSV databases (16 domains + 7 stacks)
 ├── .codex/skills/ui-ux-mobile/     # OpenAI Codex skill (mirror of Claude)
 │   ├── SKILL.md
 │   ├── scripts/

@@ -1,0 +1,33 @@
+Pattern,Category,Platform,SwiftUI Implementation,Compose Implementation,User Message Style,Recovery Action,Accessibility
+Inline Field Error,Validation,Cross-platform,Text with .foregroundColor(.red),Text with MaterialTheme.colorScheme.error,Simple non-technical language,Clear field or show hint,Error announced on blur
+Field Error Icon,Validation,Cross-platform,Image(systemName: exclamationmark.circle),Icon with Icons.Error,Visual indicator,Tap for details,Icon has accessible label
+Error Summary Banner,Validation,Cross-platform,Custom banner at form top,Snackbar or Banner composable,Count of errors with links,Scroll to first error,Summary announced errors navigable
+Shake Animation,Feedback,Cross-platform,Custom shake offset animation,Custom shake modifier,Physical feedback,Focus on error field,Reduced motion alternative
+Error Border Highlight,Validation,Cross-platform,.overlay with red border,OutlinedTextField isError,Visual field highlight,N/A visual only,Color not only indicator
+Network Error Toast,Connection,Cross-platform,Custom toast overlay,Snackbar with action,Connection lost message,Retry button,Toast announced
+Network Error Banner,Connection,Cross-platform,Persistent banner top,Persistent Banner composable,Offline mode indicator,Auto-dismiss on reconnect,Banner announced
+Retry Button,Recovery,Cross-platform,Button with action,Button with onClick,Try again,Re-attempt request,Button clearly labeled
+Pull to Retry,Recovery,Cross-platform,.refreshable modifier,pullRefresh modifier,Pull down to retry,Manual refresh,Alternative retry button
+Empty State Error,Content,Cross-platform,ContentUnavailableView,Custom empty state,Something went wrong,Retry or go back,Error description announced
+404 Not Found,Navigation,Cross-platform,Custom not found view,Custom composable,Page not found friendly,Go home or back,Clear navigation options
+Permission Denied,Authorization,Cross-platform,Custom permission view,Custom composable,Need permission message,Open settings button,Settings action accessible
+Session Expired,Authentication,Cross-platform,Alert with login action,Dialog with action,Please log in again,Login button,Modal dialog accessible
+Server Error 500,API,Cross-platform,Custom error view,Custom composable,Something went wrong our end,Retry later,Error announced
+Timeout Error,API,Cross-platform,Custom timeout view,Custom composable,Taking too long,Retry button,Retry action accessible
+Rate Limited,API,Cross-platform,Custom with timer,Custom with countdown,Too many requests wait,Auto-retry countdown,Time remaining announced
+Validation Message,Form,Cross-platform,Text below field,Supporting text error,Format hint with example,Clear or fix,Message associated with field
+Password Requirements,Form,Cross-platform,List with checkmarks,Column with requirement items,What is needed,Show as user types,Requirements announced
+Suggestion Correction,Input,Cross-platform,Custom suggestion UI,Custom suggestion chip,Did you mean X,Tap to accept,Suggestion announced
+Offline Fallback,Connection,Cross-platform,Cached content view,Cached data display,Showing offline data,N/A automatic,Offline mode announced
+Graceful Degradation,Partial,Cross-platform,Feature disable view,Reduced feature UI,Feature unavailable,Alternative action,Degraded state explained
+Error Boundary,Code,Cross-platform,Custom error catching,Error boundary composable,App error view,Restart or report,Report button accessible
+Crash Recovery,Fatal,Cross-platform,Scene restoration,Activity recreation,Sorry crash message,Restore state,State restored announced
+Form Preservation,Data Loss,Cross-platform,@AppStorage backup,DataStore backup,Data saved message,Resume where left,Auto-save announced
+Undo Action,Recovery,Cross-platform,Custom undo toast,Snackbar with undo,Action undone,Undo button timed,Undo button accessible
+Conflict Resolution,Sync,Cross-platform,Custom conflict UI,Dialog with options,Data conflict detected,Choose version,Options announced
+Optimistic Rollback,UI,Cross-platform,State reversion,State reversion,Action failed reverting,N/A automatic,Rollback announced
+Error Logging,Debug,Cross-platform,OSLog or analytics,Timber or analytics,N/A internal,N/A automatic,Privacy compliant
+User Feedback,Support,Cross-platform,Feedback form or email,Feedback form,Report problem,Submit feedback,Form accessible
+Help Link,Support,Cross-platform,Link to help center,ClickableText to help,Get help,Open help article,Link accessible
+Contact Support,Support,Cross-platform,Email or chat button,Button to support,Contact us,Open support channel,Support accessible
+Error Codes,Technical,Cross-platform,Error code in details,Error code expandable,Error code for support,Copy code button,Code copyable

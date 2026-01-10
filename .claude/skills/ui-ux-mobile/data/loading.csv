@@ -1,0 +1,30 @@
+Pattern,Category,Platform,SwiftUI Implementation,Compose Implementation,Duration,Use Case,Accessibility Alternative
+Skeleton Screen,Placeholder,Cross-platform,Custom gray shapes with shimmer,Custom shimmer modifier,Until content loads,Content loading preview,Announce loading state
+Shimmer Effect,Animation,Cross-platform,LinearGradient animation,Brush.linearGradient animate,1-2s loop continuous,Skeleton enhancement,Static gray or announce
+Circular Spinner,Indeterminate,Cross-platform,ProgressView(),CircularProgressIndicator(),Until complete,Unknown duration,Announce loading
+Linear Progress,Determinate,Cross-platform,ProgressView(value:),LinearProgressIndicator(progress:),Tracks actual progress,Known progress uploads,Percentage announced
+Step Indicator,Multi-step,Cross-platform,Custom stepper view,Stepper composable,Per step,Multi-step processes,Step X of Y announced
+Dots Loading,Indeterminate,Cross-platform,Custom bouncing dots,Custom dot animation,600ms per cycle,Brief waits,Announce loading
+Pull Refresh Spinner,Refresh,Cross-platform,.refreshable built-in,pullRefresh() built-in,Until refresh complete,Content refresh,Refreshing announced
+Optimistic UI,Instant,Cross-platform,Immediate state update,Immediate state update,Instant then confirm,Actions with server,Rollback if failed
+Streaming Content,Progressive,Cross-platform,AsyncImage or custom,Coil AsyncImage,As data arrives,Images large content,Alt text when complete
+Lazy Loading,Deferred,Cross-platform,LazyVStack onAppear,LazyColumn item appear,On scroll near,Long lists content,Items announced on load
+Prefetch,Anticipatory,Cross-platform,Custom prefetch logic,Paging library prefetch,Before needed,Predicted next content,Transparent to user
+Blur Placeholder,Image,Cross-platform,BlurHash or custom blur,BlurHash composable,Until image loads,Image loading,Low-res described
+Dominant Color BG,Image,Cross-platform,Custom color extraction,Palette API,Instant from thumb,Image loading context,Color not required
+Skeleton Card,Component,Cross-platform,Custom card placeholder,Custom card shimmer,Until data loads,Card content,Loading card announced
+Skeleton List,Component,Cross-platform,ForEach with placeholders,LazyColumn placeholders,Until list loads,List loading,Loading list announced
+Skeleton Avatar,Component,Cross-platform,Circle with shimmer,Circle with shimmer,Until image loads,Profile loading,Loading profile
+Skeleton Text,Component,Cross-platform,Rounded rect lines,Rounded rect lines,Until text loads,Text content,Loading text
+Empty State Loading,Initial,Cross-platform,ContentUnavailableView loading,Custom loading state,First load,Empty to content,Loading announced
+Refresh Indicator,Pull,iOS,Built-in refreshable,N/A,During refresh,Pull to refresh,Refreshing announced
+Swipe Refresh,Pull,Android,N/A,SwipeRefresh(),During refresh,Pull to refresh,Refreshing announced
+Full Screen Loading,Modal,Cross-platform,Custom overlay,Custom overlay dialog,Critical operations,Blocking operations,Modal announced
+Inline Loading,Contextual,Cross-platform,ProgressView inline,CircularProgressIndicator small,Button or field,Button submit,Button loading state
+Toast Loading,Feedback,Cross-platform,Custom toast progress,Snackbar with progress,Brief operations,Quick confirmations,Action in progress
+Background Sync,Silent,Cross-platform,Background task indicator,WorkManager indicator,Until sync complete,Background operations,Sync status optional
+Upload Progress,File,Cross-platform,ProgressView with percentage,LinearProgressIndicator,Upload duration,File uploads,Percentage announced
+Download Progress,File,Cross-platform,ProgressView with bytes,LinearProgressIndicator,Download duration,File downloads,Progress announced
+Stream Loading,Real-time,Cross-platform,Continuous update view,LaunchedEffect collect,Ongoing,Live data feeds,Updates announced
+Partial Loading,Incremental,Cross-platform,Section by section reveal,animateItemPlacement,Per section,Modular content,Section loading
+Error Recovery Loading,Retry,Cross-platform,Retry with progress,Retry with indicator,Retry attempt,After error,Retrying announced
