@@ -268,6 +268,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **Tab bar** | Use system TabView (floating in iOS 26) | Force custom bottom navigation |
 | **State** | Use @State, @StateObject, @ObservedObject correctly | Use @ObservedObject to create objects |
 | **Animation** | Use spring animations with reduce motion check | Ignore prefers-reduced-motion |
+| **Charts & stats** | Use Swift Charts with clear axes, summary KPIs, and tap-to-reveal values | Draw custom charts that ignore Dynamic Type or hide values |
 
 ### Android (Jetpack Compose + Material 3)
 
@@ -278,6 +279,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **Typography** | Use MaterialTheme.typography tokens | Define custom text sizes |
 | **State** | Use remember, rememberSaveable, StateFlow | Use remember for data that must survive rotation |
 | **Lists** | Use LazyColumn with stable keys | Use Column with items for long lists |
+| **Charts & stats** | Use Material 3 color roles, labeled legends, and tap/long-press value callouts | Encode meaning by color only or omit labels |
 
 ### Cross-Platform
 
@@ -287,6 +289,7 @@ python3 .claude/skills/ui-ux-mobile/scripts/search.py "typography scale" --domai
 | **Accessibility** | Test with TalkBack AND VoiceOver | Test on one platform only |
 | **Navigation** | Use platform navigation patterns | Force same navigation on all platforms |
 | **Gestures** | Provide button alternatives for gestures | Require gestures without alternatives |
+| **Charts & stats** | Share tokens and data model, but use native chart patterns and a text summary | Force identical interactions or skip summaries |
 
 ---
 

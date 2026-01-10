@@ -220,6 +220,34 @@ DON'T: "Error 422: Validation failed"
 
 **Rule:** Progress indicators must be honest
 
+### Data Visualization and Statistics
+
+**Goals:**
+- Make trends obvious before details
+- Keep units and time ranges consistent
+- Support glanceable reading
+
+**Chart selection:**
+- Line: time series and trend direction
+- Bar: category comparisons and ranking
+- Area: cumulative change and volume
+- Pie: only for 3-5 parts with labels
+
+**Interaction:**
+- Tap or long-press for exact values
+- Provide range filters near the chart
+- Avoid horizontal scrolling for small datasets
+
+**Accessibility:**
+- Provide a text summary below charts
+- Offer a list or table fallback for screen readers
+- Ensure 4.5:1 contrast and large touch targets
+
+**Platform notes:**
+- iOS: Use Swift Charts and Dynamic Type; keep overlays subtle and prioritize system colors
+- Android: Use Material 3 color roles; show labeled axes and legends; tooltips on long-press
+- Cross-platform: Share data model and tokens, but use native chart patterns and summaries
+
 ### Pull-to-Refresh and Infinite Scroll
 
 **Pull-to-Refresh:**

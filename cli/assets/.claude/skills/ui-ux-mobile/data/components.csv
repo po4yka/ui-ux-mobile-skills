@@ -65,3 +65,6 @@ Rich Text Editor,Cross-platform,TextEditor attributed,Custom or library,flutter_
 Markdown Viewer,Cross-platform,AttributedString,Markwon library,flutter_markdown,react-native-markdown-display,accessibilityRole document,Links images code blocks
 PDF Viewer,Cross-platform,PDFKit PDFView,PdfRenderer,flutter_pdfview,react-native-pdf,accessibilityRole document,Zoom pages search
 Signature Pad,Cross-platform,Custom Canvas,Custom Canvas,signature_pad,react-native-signature-capture,accessibilityLabel signature,Clear undo save
+Charts (Bar/Line),Cross-platform,Charts Chart + BarMark or LineMark,Canvas plus chart library (Vico or MPAndroidChart),fl_chart,react-native-svg + victory-native,accessibilityLabel with value summary and units,Label axes and units; allow tap for exact values
+KPI Card,Cross-platform,LabeledContent or Grid with Text,Card with Text,Card + Text,View + Text,accessibilityLabel metric name and value,Keep 1 to 3 primary metrics and show delta
+Sparkline,Cross-platform,Chart with LineMark and minimal axes,Canvas small line chart,fl_chart LineChart,react-native-svg path,accessibilityLabel trend and last value,Use for trends only and pair with numeric value
