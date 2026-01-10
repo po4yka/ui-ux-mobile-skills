@@ -459,6 +459,13 @@ Show action results immediately before server confirmation:
 4. Images (adaptive to connection)
 5. Non-critical animations
 
+### Performance Checklist
+
+- Use lazy lists with stable keys
+- Prefetch hero images above the fold
+- Avoid unnecessary layout invalidations
+- Keep list item layouts lightweight
+
 ---
 
 ## Platform Guidelines

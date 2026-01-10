@@ -29,3 +29,6 @@ Prewarming,Launch,Cross-platform,ScenePhase handling,App Startup library,Medium 
 Battery Monitoring,Power,Cross-platform,ProcessInfo thermal,Battery intent receiver,Low - user trust,Battery drain,Reduce background work
 Network Efficiency,Power,Cross-platform,URLSession config,OkHttp config,Medium - data usage,Data transferred,Batch and compress
 Offline First,Resilience,Cross-platform,Core Data or SwiftData,Room or DataStore,High - usability,Offline capability,Cache critical data
+Stable Keys,List,Cross-platform,ForEach(id: \\.id),LazyColumn items(key =),High - scroll smooth,Frame drops,Provide stable keys for list items
+Image Prefetch,Network,Cross-platform,AsyncImage with prefetch,Coil imageLoader prefetch,Medium - perceived,Image load time,Prefetch above the fold
+Avoid Layout Thrash,Rendering,Cross-platform,Minimize layout invalidations,Remember layout state,Medium - jank,Frame timing,Batch state updates
