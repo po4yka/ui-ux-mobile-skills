@@ -259,10 +259,10 @@ def filter_by_platform(results, platform):
     filtered = []
     for row in results:
         platform_value = str(row.get("Platform", "")).lower()
-        if any(kw in platform_value for kw in keywords) or "cross" in platform_value:
+        if any(kw in platform_value for kw in keywords):
             filtered.append(row)
 
-    return filtered if filtered else results  # Return original if no matches
+    return filtered
 
 
 def search_multi_domain(query, domains, max_results=MAX_RESULTS, platform=None):
