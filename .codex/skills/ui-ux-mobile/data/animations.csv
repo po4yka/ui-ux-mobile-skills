@@ -69,3 +69,5 @@ Reorder Drag,Cross-platform,200ms,Spring,DragGesture with animation,LazyColumn a
 Swipe Actions,Cross-platform,200ms,Spring,.swipeActions modifier,SwipeToDismiss,Row actions,Button tap instead
 Zoom Gesture,Cross-platform,Variable,Spring,MagnificationGesture,detectTransformGestures,Image zoom,Pinch disabled
 Rotation Gesture,Cross-platform,Variable,Spring,RotationGesture,detectTransformGestures,Image rotate,Rotation disabled
+Micro Interaction,Cross-platform,150-200ms,Ease out,.easeOut(duration: 0.18),tween(180, easing = LinearOutSlowInEasing),Button press toggle feedback,Instant state change
+Macro Transition,Cross-platform,300-400ms,Ease in out,.easeInOut(duration: 0.35),tween(350, easing = FastOutSlowInEasing),Screen transitions sheets,Instant or crossfade

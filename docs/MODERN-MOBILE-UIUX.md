@@ -78,6 +78,20 @@ Mobile UI/UX in 2025-2026 emphasizes emotional design, AI-driven personalization
 - 30-40% improvement in perceived performance
 - 75% of apps will include micro-interactions by end of 2025 (Gartner)
 
+### Motion and Haptics
+
+**Motion guidelines:**
+- Micro transitions: 150-200ms with ease out
+- Macro transitions: 300-400ms with ease in out
+- Use spring motion for physical interactions
+- Provide reduce-motion fallbacks (crossfade or instant)
+
+**Haptics guidelines:**
+- Light feedback for selection and toggles
+- Medium feedback for confirmations
+- Strong feedback for warnings or errors
+- Do not haptic every tap; reserve for intent
+
 ### Dark Mode Best Practices
 
 | Do | Don't |

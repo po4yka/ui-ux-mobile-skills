@@ -13,6 +13,8 @@ Pull to Refresh,Cross-platform,.refreshable modifier,pullRefresh Modifier,Refres
 Scroll,Cross-platform,ScrollView List,LazyColumn LazyRow,ListView SingleChildScrollView,Edge bounce feedback,Focus navigation page buttons
 Force Touch 3D Touch,iOS legacy,Not available iOS 13+,N/A,N/A,Peek and pop removed,Long press context menu
 Haptic Tap,Cross-platform,UIImpactFeedbackGenerator,HapticFeedback.performHapticFeedback,HapticFeedback.vibrate,Customizable intensity,Audio feedback alternative
+Selection Feedback,Cross-platform,UISelectionFeedbackGenerator,LocalHapticFeedback.performHapticFeedback(HapticFeedbackType.TextHandleMove),HapticFeedback.selectionClick,Selection click,Visual selection state
+Notification Feedback,Cross-platform,UINotificationFeedbackGenerator,LocalHapticFeedback.performHapticFeedback(HapticFeedbackType.LongPress),HapticFeedback.heavyImpact,Success warning error,Toast banner and color change
 Swipe Actions,Cross-platform,.swipeActions modifier,SwipeToDismiss,Dismissible Slidable,Light impact on reveal,Action buttons visible
 Multi-touch,Cross-platform,SimultaneousGesture,Multiple pointer input,MultiDragGestureRecognizer,Per-finger feedback,Single touch fallback
 Hover,iPadOS/Desktop,.onHover modifier,Modifier.hoverable,MouseRegion,None - visual only,Focus states for keyboard
